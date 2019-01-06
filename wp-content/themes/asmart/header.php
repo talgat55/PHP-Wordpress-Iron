@@ -25,84 +25,54 @@
     <header id="masthead" class="site-header">
         <div class="top-header">
             <div class="container">
+            <div class="row">
                 <div class="row-top-header">
-                    <div class="top-header-left-block">
-                        <a href="<?php echo home_url(); ?>" class="logo-header-white">
-                            <img src="<?php echo get_theme_file_uri('/assets/images/footer-logo.png') ?>" alt="Logo">
-                        </a>
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                        <div class="row">
+                            <a href="<?php echo home_url(); ?>"  class="logo"  title="<?php  _e('Перейти на главную страницу', 'light'); ?>" >
+                                <img src="<?php echo get_theme_file_uri('/assets/images/logo.png') ?>" alt="<?php  _e('Логотип', 'light'); ?>">
+                            </a>
+                        </div>
                     </div>
-                    <div class="top-header-center-block">
-                        <form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-                            <label  >
-                                <span class="screen-reader-text"><?php echo _x( 'Поиск:', 'label', 'light' ); ?></span>
-                            </label>
-                            <input type="search" id="<?php echo $unique_id; ?>" class="search-field" placeholder="<?php echo esc_attr_x( 'Поиск ', 'placeholder', 'light' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
-                            <button type="submit" class="search-submit"> <i class="fas fa-search"></i></button>
-                        </form>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="row text-center">
+                                    <a href="tel:+73812627816"  class="link-phone">
+                                        +7 (3812) <span>62-78-16</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="row text-center">
+                                    <a href="tel:+79045872710"  class="link-phone">
+                                        +7 (904) <span>587-27-10</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="top-header-right-block">
-                        <a class="basket-top" href="<?php echo wc_get_cart_url(); ?>"
-                           title="<?php _e('Перейти в корзину'); ?>"><i class="fas fa-shopping-cart"></i> корзина
-                            (<?php echo WC()->cart->get_cart_contents_count(); ?>) </a>
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                        <div class="row text-right">
+                            <a href="#"  class="btn-link call-button">
+                                <?php  _e('Заказать звонок', 'light'); ?>
+                            </a>
+                        </div>
                     </div>
+
                 </div>
-                <div class="bottom-hedaer" >
-                    <?php wp_nav_menu('menu_id=menu-main&menu_class=top-main-container clearfix&theme_location=top_menu'); ?>
-                </div>
+
+            </div>
             </div>
         </div>
-        <div class="center-header">
+        <div class="bottom-header" >
             <div class="container">
-                <div class="center-header-row clearfix">
-                    <div class="center-header-left-block">
-                        <a href="<?php echo home_url(); ?>" class="logo">
-                            <img src="<?php echo get_theme_file_uri('/assets/images/logo.png') ?>" alt="Logo">
-                        </a>
-                    </div>
-                    <div class="center-header-right-block">
-                        <div class="center-sub-block">
-                            <div class="center-sub-block-walp fisrt">
-                                <div class="icon-block-header">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                </div>
-                                <div class="text-block-header">
-                                    ТК "Казачья Слобода", 1 этаж
-                                    ул. Пушкина 59.
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="center-sub-block">
-                            <div class="center-sub-block-walp">
-                                <div class="icon-block-header">
-                                    <i class="far fa-clock"></i>
-                                </div>
-                                <div class="text-block-header">
-                                    Ежедневно<br>
-                                    10:00 — 18:00
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div class="center-sub-block">
-                            <div class="center-sub-block-walp">
-                                <div class="icon-block-header">
-                                    <i class="fas fa-phone"></i>
-                                </div>
-                                <div class="text-block-header">
-                                    <a href="tel:8 (923) 676-33-89">8 (923) 676-33-89</a>
-                                </div>
-
-                            </div>
-                        </div>
-
-
-                    </div>
-
-                </div>
+                <div class="row">
+                    <?php wp_nav_menu('menu_id=menu-main&menu_class=top-main-container clearfix&theme_location=top_menu'); ?>
+                 </div>
             </div>
         </div>
+
 
     </header><!-- #masthead -->
 

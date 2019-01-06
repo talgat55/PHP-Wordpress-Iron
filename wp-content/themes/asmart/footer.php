@@ -1,34 +1,28 @@
 </div><!-- #content -->
 
 <footer class="site-footer">
-    <div class="wrap clearfix">
+    <div class="wrap">
         <div class="container clearfix">
-            <div class="col-md-7">
-                <div class="first-block">
-                    <h3>навигация</h3>
-                    <?php wp_nav_menu('menu_id=menu-main&menu_class=footer-main-container clearfix&theme_location=footer_one_menu'); ?>
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="row">
+                        <a href="<?php echo home_url(); ?>"  class="logo-footer"  title="<?php  _e('Перейти на главную страницу', 'light'); ?>" >
+                            <img src="<?php echo get_theme_file_uri('/assets/images/logo-footer.png') ?>" alt="<?php  _e('Логотип', 'light'); ?>">
+                        </a>
+                        <a href="/policy" class="footer-policy-link">Политика обработки персональных данных</a>
+                    </div>
                 </div>
-                <div class="second-block">
-                    <h3>каталог</h3>
-                    <?php wp_nav_menu('menu_id=menu-main&menu_class=footer-main-container clearfix&theme_location=footer_two_menu'); ?>
+                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                    <div class="row">
+                        <?php wp_nav_menu('menu_id=menu-main&menu_class=bottom-main-container clearfix&theme_location=top_menu'); ?>
+                        <p class="footer-text-copyright"><a target="_blank" class="bootom-copyright" title="Перейти на сайт разработчика" href="http://asmart-group.ru/">Сайт разработан IT-company <span>Asmart</span></a></p>
+
+                    </div>
                 </div>
-
-
             </div>
-            <div class="col-md-5 footer-copyright">
-                <a href="<?php echo home_url(); ?>" class="logo-footer">
-                    <img src="<?php echo get_theme_file_uri('/assets/images/footer-logo.png') ?>" alt="Logo">
-                </a>
-                <p>
-                    Территория футбола © 2018.<br>
-                    Все права защищены
-                </p>
             </div>
+        </div>
 
-        </div>
-        <div class="container clearfix">
-            <p class="footer-text-copyright"><a target="_blank" class="bootom-copyright" title="Перейти на сайт разработчика" href="http://asmart-group.ru/">Разработка и дизайн: <span>Asmart Group</span></a></p>
-        </div>
 
     </div><!-- .wrap -->
 </footer><!-- #colophon -->

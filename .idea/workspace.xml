@@ -2,133 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3bf8ae8-9e91-46a4-b716-a7601b411b97" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/fonts/BebasNeue-Bold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/fonts/BebasNeue-Bold.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/fonts/BebasNeue-Book.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/fonts/BebasNeue-Book.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/fonts/BebasNeue-Regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/fonts/BebasNeue-Regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/fonts/OpenSans-Bold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/fonts/OpenSans-Bold.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/fonts/OpenSans-Light.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/fonts/OpenSans-Light.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/fonts/OpenSans-LightItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/fonts/OpenSans-LightItalic.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/fonts/OpenSans-Regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/fonts/OpenSans-Regular.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/images/1-compressor.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/images/2-compressor.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/images/3-compressor.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/images/angle-left-black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/images/angle-left.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/images/angle-right-black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/images/angle-right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/images/bg-bred-compressor.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/images/bg-part-compressor.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/images/bg-service.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/images/brend1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/images/brend2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/images/brend3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/images/brend4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/images/brend5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/images/brend6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/images/checkmark.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/images/checkmark.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/images/cheveron-down.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/images/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/images/footer-logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/images/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/asmart/assets/images/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/images/part1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/images/part2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/images/part3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/images/part4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/images/part5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/images/part6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/images/scan-compressor.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/images/serv1-compressor.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/images/serv2-compressor.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/images/serv3-compressor.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/images/serv4-compressor.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/images/svg-icons.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/images/test/b1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/images/test/b2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/images/test/b3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/images/test/b4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/images/test/c1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/images/test/c2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/images/test/c3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/images/test/c4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/images/test/cc1a1ddae614621084ef3eb529b6e54c.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/images/test/da1f6e5400f0b126e0a8985f91cbe108.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/images/test/t1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/images/test/t2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/images/test/t3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/images/test/t4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/assets/images/test/t5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/asmart/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/asmart/functions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/asmart/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/static/sass/footer.sass" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/asmart/static/sass/footer.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/static/sass/header.sass" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/asmart/static/sass/header.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/static/sass/style.sass" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/asmart/static/sass/style.sass" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/asmart/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/archive-product.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/checkout/cart-errors.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/checkout/form-billing.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/checkout/form-checkout.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/checkout/form-coupon.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/checkout/form-login.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/checkout/form-pay.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/checkout/form-shipping.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/checkout/order-receipt.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/checkout/payment-method.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/checkout/payment.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/checkout/review-order.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/checkout/terms.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/checkout/thankyou.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/content-product.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/content-single-product.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/global/breadcrumb.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/global/form-login.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/global/quantity-input.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/global/sidebar.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/global/wrapper-end.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/global/wrapper-start.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/loop/add-to-cart.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/loop/loop-end.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/loop/loop-start.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/loop/no-products-found.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/loop/orderby.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/loop/pagination.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/loop/price.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/loop/rating.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/loop/result-count.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/loop/sale-flash.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/single-product.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/single-product/add-to-cart/external.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/single-product/add-to-cart/grouped.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/single-product/add-to-cart/simple.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/single-product/add-to-cart/variable.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/single-product/add-to-cart/variation-add-to-cart-button.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/single-product/add-to-cart/variation.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/single-product/meta.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/single-product/photoswipe.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/single-product/price.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/single-product/product-attributes.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/single-product/product-image.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/single-product/product-thumbnails.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/single-product/rating.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/single-product/related.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/single-product/review-meta.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/single-product/review-rating.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/single-product/review.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/single-product/sale-flash.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/single-product/share.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/single-product/short-description.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/single-product/stock.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/single-product/tabs/additional-information.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/single-product/tabs/description.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/single-product/tabs/tabs.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/single-product/title.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/single-product/up-sells.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/taxonomy-product_cat.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/asmart/woocommerce/taxonomy-product_tag.php" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -139,28 +19,64 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gulpfile.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wp-content/themes/asmart/static/sass/style.sass">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+            <state relative-caret-position="115">
+              <caret line="5" column="11" selection-start-line="5" selection-end-line="5" selection-end-column="11" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/wp-content/themes/asmart/static/sass/footer.sass">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="156">
+              <caret line="8" column="9" lean-forward="true" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wp-content/themes/asmart/footer.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="17" column="55" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wp-content/themes/asmart/functions.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="231">
+              <caret line="41" column="93" selection-start-line="41" selection-start-column="93" selection-end-line="41" selection-end-column="93" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wp-content/themes/asmart/static/sass/header.sass">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="478">
+              <caret line="46" column="4" selection-start-line="46" selection-start-column="4" selection-end-line="47" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wp-content/themes/asmart/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="644">
-              <caret line="54" column="1" selection-start-line="54" selection-start-column="1" selection-end-line="54" selection-end-column="1" />
+            <state relative-caret-position="210">
+              <caret line="55" column="12" lean-forward="true" selection-start-line="55" selection-start-column="12" selection-end-line="55" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wp-content/themes/asmart/header.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="370">
+              <caret line="70" column="20" selection-start-line="70" selection-start-column="20" selection-end-line="70" selection-end-column="125" />
             </state>
           </provider>
         </entry>
@@ -175,8 +91,13 @@
       <list>
         <option value="$PROJECT_DIR$/wp-config.php" />
         <option value="$PROJECT_DIR$/gulpfile.js" />
-        <option value="$PROJECT_DIR$/wp-content/themes/asmart/static/sass/style.sass" />
+        <option value="$PROJECT_DIR$/wp-content/themes/asmart/functions.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/asmart/header.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/asmart/style.css" />
+        <option value="$PROJECT_DIR$/wp-content/themes/asmart/static/sass/style.sass" />
+        <option value="$PROJECT_DIR$/wp-content/themes/asmart/static/sass/header.sass" />
+        <option value="$PROJECT_DIR$/wp-content/themes/asmart/footer.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/asmart/static/sass/footer.sass" />
       </list>
     </option>
   </component>
@@ -217,6 +138,23 @@
               <item name="themes" type="462c0819:PsiDirectoryNode" />
               <item name="asmart" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="wpiron.local" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wpiron.local" type="462c0819:PsiDirectoryNode" />
+              <item name="wp-content" type="462c0819:PsiDirectoryNode" />
+              <item name="themes" type="462c0819:PsiDirectoryNode" />
+              <item name="asmart" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wpiron.local" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wpiron.local" type="462c0819:PsiDirectoryNode" />
+              <item name="wp-content" type="462c0819:PsiDirectoryNode" />
+              <item name="themes" type="462c0819:PsiDirectoryNode" />
+              <item name="asmart" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="sass" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -254,18 +192,18 @@
       <option name="presentableId" value="Default" />
       <updated>1546715339784</updated>
       <workItem from="1546715341014" duration="3030000" />
-      <workItem from="1546759483196" duration="1895000" />
+      <workItem from="1546759483196" duration="9763000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4925000" />
+    <option name="totallyTimeSpent" value="12793000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1901603" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1901603" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Migrations" order="0" />
@@ -279,7 +217,7 @@
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32873806" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.117709436" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -305,17 +243,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/asmart/static/sass/style.sass">
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/asmart/header.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        <state relative-caret-position="370">
+          <caret line="70" column="20" selection-start-line="70" selection-start-column="20" selection-end-line="70" selection-end-column="125" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/asmart/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="41" column="93" selection-start-line="41" selection-start-column="93" selection-end-line="41" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/asmart/static/sass/header.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="478">
+          <caret line="46" column="4" selection-start-line="46" selection-start-column="4" selection-end-line="47" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/asmart/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="644">
-          <caret line="54" column="1" selection-start-line="54" selection-start-column="1" selection-end-line="54" selection-end-column="1" />
+        <state relative-caret-position="210">
+          <caret line="55" column="12" lean-forward="true" selection-start-line="55" selection-start-column="12" selection-end-line="55" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/asmart/static/sass/style.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="11" selection-start-line="5" selection-end-line="5" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/asmart/footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="17" column="55" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/asmart/static/sass/footer.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="8" column="9" lean-forward="true" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
         </state>
       </provider>
     </entry>

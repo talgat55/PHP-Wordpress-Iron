@@ -1,0 +1,104 @@
+.top-header {
+  padding: 22px 0 28px 0; }
+
+.link-phone {
+  font-size: 24px;
+  line-height: 71px;
+  font-family: "MyriadPro-Light";
+  color: #706f6f;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
+  .link-phone span {
+    font-family: "MyriadPro-Bold"; }
+  .link-phone:hover {
+    text-decoration: none;
+    color: #ffc04e; }
+
+.btn-link.call-button {
+  text-decoration: none;
+  color: #fff;
+  font-family: "MyriadPro-Regular";
+  background: #ffc04e;
+  display: inline-block;
+  padding: 12px 31px;
+  -webkit-border-radius: 26px;
+          border-radius: 26px;
+  margin-top: 11px;
+  font-size: 18px;
+  -webkit-box-shadow: 0 3px 14px 4px #e8e8e8;
+          box-shadow: 0 3px 14px 4px #e8e8e8;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
+  .btn-link.call-button:hover {
+    background: #706f6f; }
+
+.top-main-container li {
+  display: inline-block;
+  padding-right: 63px; }
+  .top-main-container li a {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #706f6f;
+    font-family: "MyriadPro-Light";
+    text-decoration: none; }
+
+.top-main-container li:last-child {
+  padding-right: 0; }
+
+.top-main-container li:hover a {
+  color: #ffc04e; }
+
+.top-main-container li.current-menu-item a {
+  font-family: "MyriadPro-Semibold";
+  color: #ffc04e; }
+
+.footer-policy-link {
+  font-family: "MyriadPro-Regular";
+  font-size: 18px;
+  line-height: 1.5;
+  color: #fff;
+  margin-top: 15px;
+  display: block;
+  text-decoration: underline; }
+  .footer-policy-link:hover {
+    color: #ffc04e; }
+
+.bottom-main-container {
+  margin: 0;
+  padding: 25px 0 0 0;
+  text-align: right; }
+  .bottom-main-container li {
+    display: inline-block;
+    padding-right: 19px; }
+    .bottom-main-container li a {
+      color: #fff;
+      font-family: "MyriadPro-Light";
+      font-size: 18px;
+      line-height: 1.5; }
+  .bottom-main-container li:last-child {
+    padding-right: 0; }
+  .bottom-main-container li.current-menu-item a {
+    font-family: "MyriadPro-Semibold"; }
+
+footer {
+  background-color: #706f6f; }
+
+.site-footer {
+  padding: 31px 0; }
+
+.footer-text-copyright {
+  margin: 0;
+  text-align: right;
+  padding-top: 35px; }
+  .footer-text-copyright a {
+    font-family: "MyriadPro-Light";
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none; }
+    .footer-text-copyright a span {
+      color: #b6e559;
+      font-family: "MyriadPro-Bold"; }
+  .footer-text-copyright a:hover {
+    text-decoration: underline; }
