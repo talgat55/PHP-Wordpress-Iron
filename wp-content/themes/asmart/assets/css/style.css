@@ -34,25 +34,26 @@
   .btn-link.call-button:hover {
     background: #706f6f; }
 
-.top-main-container li {
-  display: inline-block;
-  padding-right: 63px; }
-  .top-main-container li a {
-    font-size: 18px;
-    line-height: 1.5;
-    color: #706f6f;
-    font-family: "MyriadPro-Light";
-    text-decoration: none; }
-
-.top-main-container li:last-child {
-  padding-right: 0; }
-
-.top-main-container li:hover a {
-  color: #ffc04e; }
-
-.top-main-container li.current-menu-item a {
-  font-family: "MyriadPro-Semibold";
-  color: #ffc04e; }
+.top-main-container {
+  text-align: center;
+  margin: 0;
+  padding: 0; }
+  .top-main-container li {
+    display: inline-block;
+    padding-right: 63px; }
+    .top-main-container li a {
+      font-size: 18px;
+      line-height: 1.5;
+      color: #706f6f;
+      font-family: "MyriadPro-Light";
+      text-decoration: none; }
+  .top-main-container li:last-child {
+    padding-right: 0; }
+  .top-main-container li:hover a {
+    color: #ffc04e; }
+  .top-main-container li.current-menu-item a {
+    font-family: "MyriadPro-Semibold";
+    color: #ffc04e; }
 
 .footer-policy-link {
   font-family: "MyriadPro-Regular";
