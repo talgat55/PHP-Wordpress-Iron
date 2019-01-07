@@ -660,7 +660,7 @@ function vc_products_function($atts, $content)
         $html .= '<li   class="product-cat-item col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="row">
                     <div class="product-cat-item-walp">
-                        <a  href="'.get_the_permalink().'" class="product-cat-item-holder">
+                        <a  href="'.get_term_link($term->term_id, 'product_cats').'" class="product-cat-item-holder">
                                 <div class="img-block"><img src="'.$image.'"  alt="изображение категории"/></div>
                                 
                                 <h3>
