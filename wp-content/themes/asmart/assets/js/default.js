@@ -19,69 +19,8 @@ jQuery(document).ready(function() {
     });
 
 
-    function insertParam(key, value) {
-        key = escape(key);
-        value = escape(value);
 
-        var kvp = document.location.search.substr(1).split('&');
-        if (kvp == '') {
-            document.location.search = '?' + key + '=' + value;
-        }
-        else {
 
-            var i = kvp.length;
-            var x;
-            while (i--) {
-                x = kvp[i].split('=');
-
-                if (x[0] == key) {
-                    x[1] = value;
-                    kvp[i] = x.join('=');
-                    break;
-                }
-            }
-
-            if (i < 0) {
-                kvp[kvp.length] = [key, value].join('=');
-            }
-
-            //this will reload the page, it likely better to store this until finished
-            document.location.search = kvp.join('&');
-        }
-    }
-
-    /*
-    * Lightbox
-     */
-    jQuery('.review-carousel').lightGallery({
-        download: false,
-        selector: '.review-carousel a',
-        thumbnail: true,
-        exthumbimage: false
-    });
-    /*
-    * Lightbox
-     */
-    jQuery('.row-review').lightGallery({
-        download: false,
-        selector: '.row-review a',
-        thumbnail: true,
-        exthumbimage: false
-    });
-
-    /*
-    * Slider HOme
-     */
-    jQuery('.slider-home-walp').slick({
-        infinite: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        dots: true,
-        autoplay: true,
-        prevArrow: jQuery('.arrow-slder .nav-link.right'),
-        nextArrow: jQuery('.arrow-slder .nav-link.left')
-
-    });
 
     /*
     * Carousel brend home
@@ -201,100 +140,6 @@ jQuery(document).ready(function() {
 
 
     /*
-    * Fix left dots sliders
-     */
-    var heightwindow = jQuery('body').width();
-    var redywidht = (heightwindow - 1140) / 2;
-    jQuery('.slider-home .slick-dots').css('left', redywidht);
-
-
-    /*
-    * Vk widget
-     */
-
-    if (jQuery('#vk_groups').length) {
-        var heightcontainer = jQuery('.container').width();
-        VK.Widgets.Group("vk_groups", {mode: 3, width: heightcontainer, color3: '080808'}, 36054829);
-    }
-
-    function getParameterByName(name) {
-        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-            results = regex.exec(location.search);
-        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-    }
-
-//Add or modify querystring
-    function changeUrl(key, value) {
-        //Get query string value
-        var searchUrl = location.search;
-        if (searchUrl.indexOf("?") == "-1") {
-            var urlValue = '?' + key + '=' + value;
-            history.pushState({state: 1, rand: Math.random()}, '', urlValue);
-        }
-        else {
-            //Check for key in query string, if not present
-            if (searchUrl.indexOf(key) == "-1") {
-                var urlValue = searchUrl + '&' + key + '=' + value;
-            }
-            else {	//If key present in query string
-                oldValue = getParameterByName(key);
-                if (searchUrl.indexOf("?" + key + "=") != "-1") {
-                    urlValue = searchUrl.replace('?' + key + '=' + oldValue, '?' + key + '=' + value);
-                }
-                else {
-                    urlValue = searchUrl.replace('&' + key + '=' + oldValue, '&' + key + '=' + value);
-                }
-            }
-            history.pushState({state: 1, rand: Math.random()}, '', urlValue);
-            //history.pushState function is used to add history state.
-            //It takes three parameters: a state object, a title (which is currently ignored), and (optionally) a URL.
-        }
-        objQueryString.key = value;
-        sendAjaxReq(objQueryString);
-    }
-
-//Used to display data in webpage from ajax
-    function sendAjaxReq(objQueryString) {
-        $.post('test.php', objQueryString, function (data) {
-            //alert(data);
-        })
-    }
-
-
-//Function used to remove querystring
-    function removeQString(key) {
-        var urlValue = document.location.href;
-
-        //Get query string value
-        var searchUrl = location.search;
-
-        if (key != "") {
-            var oldValue = getParameterByName(key);
-            var removeVal = key + "=" + oldValue;
-            if (searchUrl.indexOf('?' + removeVal + '&') != "-1") {
-                urlValue = urlValue.replace('?' + removeVal + '&', '?');
-            }
-            else if (searchUrl.indexOf('&' + removeVal + '&') != "-1") {
-                urlValue = urlValue.replace('&' + removeVal + '&', '&');
-            }
-            else if (searchUrl.indexOf('?' + removeVal) != "-1") {
-                urlValue = urlValue.replace('?' + removeVal, '');
-            }
-            else if (searchUrl.indexOf('&' + removeVal) != "-1") {
-                urlValue = urlValue.replace('&' + removeVal, '');
-            }
-        }
-        else {
-            var searchUrl = location.search;
-            urlValue = urlValue.replace(searchUrl, '');
-        }
-        history.pushState({state: 1, rand: Math.random()}, '', urlValue);
-        location.reload();
-    }
-
-
-    /*
      *  Functions for urls
     */
 
@@ -334,66 +179,7 @@ jQuery(document).ready(function() {
         jQuery(this).addClass('active');
 
     });
-    //-------------------------------
-    //  Actions for right block filters
-    //-------------------------------
 
-
-    jQuery('.second-row .block-filter').click(function () {
-
-        jQuery('.main-block-filters').addClass('open');
-        jQuery('.second-row .block-filter').addClass('open');
-    });
-    // close modal window
-    jQuery('.main-block-filters i').click(function () {
-
-        jQuery('.main-block-filters').removeClass('open');
-        jQuery('.second-row .block-filter').removeClass('open');
-    });
-
-    jQuery('.apply-fliter').click(function () {
-
-        var selectbrend = jQuery(".brend").val();
-        var selectrazmer = jQuery(".razmer").val();
-
-        var newUrl = "" + jQuery.query.set("SET_BY_BREND", selectbrend).set("SET_BY_RAZMER", selectrazmer).toString();
-        document.location.search = newUrl;
-        console.log(newUrl);
-        return false;
-
-    });
-    jQuery('.clean-fliter').click(function () {
-
-
-        var newUrl = "" + jQuery.query.REMOVE("SET_BY_BREND").REMOVE("SET_BY_RAZMER");
-        document.location.search = newUrl;
-        console.log(newUrl);
-        return false;
-
-    });
-/*
-*   Change tab in form page
-*/
-    jQuery('body').on('click', '.filter-form-row a', function () {
-        jQuery(this).parent().parent().removeClass('form-tab kostum-tab').addClass(jQuery(this).attr("class"));
-        jQuery(this).parent().parent().find('a').removeClass('active');
-        jQuery(this).addClass('active');
-        if(jQuery(this).hasClass('form-tab')){
-
-            jQuery('.form-part.kostum').removeClass('active-tab-form-page');
-            jQuery('.form-part.form').addClass('active-tab-form-page');
-
-        }else{
-            jQuery('.form-part.form').removeClass('active-tab-form-page');
-            jQuery('.form-part.kostum').addClass('active-tab-form-page');
-
-
-        }
-        Initslider();
-
-
-        return false;
-    });
     /*
     *   Slider builder form
     */
@@ -600,34 +386,6 @@ function afterchable(){
 
     });
 
- /*   jQuery('.top-slider, .center-slider, .bottom-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-
-     var $this =  jQuery(this).data('slider');
-
-        if($this == 'top-slider'){
-            var thumb = '.top-slider-nav li';
-
-        }else if($this == 'center-slider'){
-            var thumb = '.center-slider-nav li';
-
-        }else if($this == 'bottom-slider'){
-            var thumb = '.bottom-slider-nav li';
-
-        }
-
-
-
-        jQuery(thumb).each(function(){
-            if(jQuery(this).index() == nextSlide) {
-                jQuery(this).addClass('active');
-            } else {
-                jQuery(this).removeClass('active');
-            }
-           
-            console.log(event);
-        });
-
-    });*/
 
 
     //---
@@ -675,10 +433,33 @@ function afterchable(){
 
 
 
-
+    HomeSlider();
 
 
 
 
 // end redy funvtion
 });
+
+
+/*
+* Slider HOme
+*/
+function HomeSlider() {
+
+
+
+
+
+    jQuery('.home-slider').slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: true,
+        autoplay: false,
+        prevArrow: jQuery('.arrow-slder .nav-link.right'),
+        nextArrow: jQuery('.arrow-slder .nav-link.left')
+
+    });
+    jQuery('.home-slider .slick-dots').wrap('<div class="container" />');
+}

@@ -1,0 +1,93 @@
+//
+// Feature
+//
+.feature-class  h3
+  font-family: $font_regular
+  font-size: 16px
+  line-height: 1.5
+  color: #333333
+  margin-bottom: 30px
+//
+// Home slider
+//
+.item-home-slider
+  background-size: cover
+  background-position: center center
+  background-repeat: no-repeat
+  height: 525px
+
+.home-slider
+  height: 525px
+.home-slider-walpaper
+  position: relative
+
+.img-overlay
+  position: absolute
+  bottom: 0
+  left: 0
+  width: 100%
+  object-fit: cover
+
+
+.slider-block-content-walpaper
+  width: 55%
+  height: 100%
+  display: table
+  h2
+    font-family: $font_bold
+    font-size: 48px
+    line-height: 1.5
+    color: #fff
+    margin: 0
+    display: table-cell
+    vertical-align: middle
+    position: relative
+    left: 35px
+
+
+.content-home-slider
+  height: 100%
+  .container.relative.clearfix
+    height: 100%
+
+.nav-link.left
+  img
+    transform: rotateZ(180deg)
+
+.arrow-slder
+  position: absolute
+  top: 50%
+  margin-top: -20px
+  left: 0
+  width: 100%
+  height: 100%
+  a:hover
+    opacity: .5
+
+a.nav-link.right.slick-arrow
+  right: 0
+  position: absolute
+
+
+a.nav-link.left.slick-arrow
+  left: 0
+  position: absolute
+
+
+.slick-dots
+  width: auto
+  bottom: 52px
+  z-index: 10
+  li
+    margin: 0 2px
+    button
+      background: #fff
+      border-radius: 50%
+      width: 14px
+      height: 14px
+      opacity: .5
+  li.slick-active
+    button
+      opacity: 1
+.slick-dots li button:before
+  display: none

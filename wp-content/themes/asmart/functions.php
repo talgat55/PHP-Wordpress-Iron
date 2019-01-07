@@ -26,10 +26,10 @@ if (function_exists('register_nav_menus')) {
 * Add Feature Imagee
 **/
 add_theme_support('post-thumbnails');
-add_image_size( 'product-item', 244, 300, true );
-add_image_size( 'product-item-thumb', 50, 62, true );
-add_image_size( 'product', 260, 200, false );
-add_image_size( 'woocommerce_single', 260, 200, false);
+add_image_size('product-item', 244, 300, true);
+add_image_size('product-item-thumb', 50, 62, true);
+add_image_size('product', 260, 200, false);
+add_image_size('woocommerce_single', 260, 200, false);
 
 /**
  * Enqueue scripts and styles.
@@ -39,7 +39,7 @@ function th_scripts()
     // Theme stylesheet.
     wp_enqueue_style('bootstrapcdn', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', array(), '');
     wp_enqueue_style('th-style', get_stylesheet_uri());
-    wp_enqueue_style('main-style', get_theme_file_uri('/assets/css/style.css'), array(), '');
+
     //wp_enqueue_style( 'normalize', get_theme_file_uri(  '/assets/css/normalize.css'),array(), '' );
     //wp_enqueue_style( 'light-style-main', get_theme_file_uri(  '/assets/css/index.css'),array(), '' );
     //wp_enqueue_style( 'font-awesome', get_theme_file_uri(  '/assets/css/font-awesome.min.css'),array(), '' );
@@ -51,6 +51,7 @@ function th_scripts()
     wp_enqueue_style('lg-transitions', get_theme_file_uri('/assets/css/lg-transitions.css'), array(), '');
     wp_enqueue_style('lightgallery', get_theme_file_uri('/assets/css/lightgallery.css'), array(), '');
     wp_enqueue_style('slick-theme', get_theme_file_uri('/assets/css/slick-theme.css'), array(), '');
+    wp_enqueue_style('main-style', get_theme_file_uri('/assets/css/style.css'), array(), '');
     // wp_enqueue_style( 'owl.theme.default.min', get_theme_file_uri(  '/assets/css/owl.theme.default.min.css'),array(), '' );
     // wp_enqueue_style( 'slick-theme', get_theme_file_uri(  '/assets/css/slick-theme.css'),array(), '' );
     // wp_enqueue_style( 'slick', get_theme_file_uri(  '/assets/css/slick.css'),array(), '' );
@@ -62,8 +63,8 @@ function th_scripts()
     wp_enqueue_script('slick.min', get_theme_file_uri('/assets/js/slick.min.js'), array(), '');
     wp_enqueue_script('jquery.matchHeight', get_theme_file_uri('/assets/js/jquery.matchHeight.js'), array(), '');
 
-    wp_enqueue_style('select2.min.css','https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css', array(), '');
-    wp_enqueue_script('select2.min.js','https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js', array(), '');
+    wp_enqueue_style('select2.min.css', 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css', array(), '');
+    wp_enqueue_script('select2.min.js', 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js', array(), '');
 
 
     wp_enqueue_script('jquery.query-object', get_theme_file_uri('/assets/js/jquery.query-object.js'), array(), '');
@@ -99,34 +100,33 @@ add_action('wp_enqueue_scripts', 'th_scripts');
 
 
 /*
-*  Rgister Post Type Service
+*  Rgister Post Type Slider
 */
 
-add_action('init', 'post_type_service');
+add_action('init', 'post_type_slider');
 
-function post_type_service()
+function post_type_slider()
 {
     $labels = array(
-        'name' => 'Услуги',
-        'singular_name' => 'Услуги',
-        'all_items' => 'Услуги',
-        'menu_name' => 'Услуги' // ссылка в меню в админке
+        'name' => 'Слайдер',
+        'singular_name' => 'Слайдер',
+        'all_items' => 'Слайдер',
+        'menu_name' => 'Слайдер' // ссылка в меню в админке
     );
     $args = array(
         'labels' => $labels,
         'public' => true,
         'menu_position' => 5,
         'has_archive' => true,
-        'query_var' => "service",
+        'query_var' => "slider",
         'supports' => array(
             'title',
             'editor',
             'thumbnail'
         )
     );
-    register_post_type('service', $args);
+    register_post_type('slider', $args);
 }
-
 
 
 /*
@@ -185,37 +185,6 @@ function post_type_review()
         )
     );
     register_post_type('review', $args);
-}
-
-
-/*
-*  Rgister Post Type Slider
-*/
-
-add_action('init', 'post_type_slider');
-
-function post_type_slider()
-{
-    $labels = array(
-        'name' => 'Слайдер',
-        'singular_name' => 'Слайдер',
-        'all_items' => 'Слайдер',
-        'menu_name' => 'Слайдер' // ссылка в меню в админке
-    );
-    $args = array(
-        'labels' => $labels,
-        'public' => true,
-        'menu_position' => 5,
-        'has_archive' => true,
-        'query_var' => "slider",
-        'supports' => array(
-            'title',
-            'editor',
-            'thumbnail'
-        ),
-        'taxonomies' => array('category')
-    );
-    register_post_type('slider', $args);
 }
 
 
@@ -395,196 +364,6 @@ function paginate_links_custom($args = '')
     return $r;
 }
 
-/*
- * * Икувыскгьи
- */
-
-function dimox_breadcrumbs()
-{
-
-    /* === ОПЦИИ === */
-    $text['home'] = 'Главная'; // текст ссылки "Главная"
-    $text['category'] = '%s'; // текст для страницы рубрики
-    $text['search'] = 'Результаты поиска по запросу "%s"'; // текст для страницы с результатами поиска
-    $text['tag'] = 'Записи с тегом "%s"'; // текст для страницы тега
-    $text['author'] = 'Статьи автора %s'; // текст для страницы автора
-    $text['404'] = 'Ошибка 404'; // текст для страницы 404
-    $text['page'] = 'Страница %s'; // текст 'Страница N'
-    $text['cpage'] = 'Страница комментариев %s'; // текст 'Страница комментариев N'
-
-    $wrap_before = '<div class="breadcrumbs main" itemscope itemtype="http://schema.org/BreadcrumbList">'; // открывающий тег обертки
-    $wrap_after = '</div><!-- .breadcrumbs -->'; // закрывающий тег обертки
-    $sep = '<i class="fas fa-caret-right"></i>'; // разделитель между "крошками"
-    $sep_before = '<span class="sep">'; // тег перед разделителем
-    $sep_after = '</span>'; // тег после разделителя
-    $show_home_link = 1; // 1 - показывать ссылку "Главная", 0 - не показывать
-    $show_on_home = 0; // 1 - показывать "хлебные крошки" на главной странице, 0 - не показывать
-    $show_current = 1; // 1 - показывать название текущей страницы, 0 - не показывать
-    $before = '<span class="current">'; // тег перед текущей "крошкой"
-    $after = '</span>'; // тег после текущей "крошки"
-    /* === КОНЕЦ ОПЦИЙ === */
-
-    global $post;
-    $home_url = home_url('/');
-    $link_before = '<span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">';
-    $link_after = '</span>';
-    $link_attr = ' itemprop="item"';
-    $link_in_before = '<span itemprop="name">';
-    $link_in_after = '</span>';
-    $link = $link_before . '<a href="%1$s"' . $link_attr . '>' . $link_in_before . '%2$s' . $link_in_after . '</a>' . $link_after;
-    $frontpage_id = get_option('page_on_front');
-    $parent_id = ($post) ? $post->post_parent : '';
-    $sep = ' ' . $sep_before . $sep . $sep_after . ' ';
-    $home_link = $link_before . '<a href="' . $home_url . '"' . $link_attr . ' class="home">' . $link_in_before . $text['home'] . $link_in_after . '</a>' . $link_after;
-
-    if (is_home() || is_front_page()) {
-
-        if ($show_on_home) echo $wrap_before . $home_link . $wrap_after;
-
-    } else {
-
-        echo $wrap_before;
-        if ($show_home_link) echo $home_link;
-
-        if (is_category()) {
-            $cat = get_category(get_query_var('cat'), false);
-            if ($cat->parent != 0) {
-                $cats = get_category_parents($cat->parent, TRUE, $sep);
-                $cats = preg_replace("#^(.+)$sep$#", "$1", $cats);
-                $cats = preg_replace('#<a([^>]+)>([^<]+)<\/a>#', $link_before . '<a$1' . $link_attr . '>' . $link_in_before . '$2' . $link_in_after . '</a>' . $link_after, $cats);
-                if ($show_home_link) echo $sep;
-                echo $cats;
-            }
-            if (get_query_var('paged')) {
-                $cat = $cat->cat_ID;
-                echo $sep . sprintf($link, get_category_link($cat), get_cat_name($cat)) . $sep . $before . sprintf($text['page'], get_query_var('paged')) . $after;
-            } else {
-                if ($show_current) echo $sep . $before . sprintf($text['category'], single_cat_title('', false)) . $after;
-            }
-
-        } elseif (is_search()) {
-            if (have_posts()) {
-                if ($show_home_link && $show_current) echo $sep;
-                if ($show_current) echo $before . sprintf($text['search'], get_search_query()) . $after;
-            } else {
-                if ($show_home_link) echo $sep;
-                echo $before . sprintf($text['search'], get_search_query()) . $after;
-            }
-
-        } elseif (is_day()) {
-            if ($show_home_link) echo $sep;
-            echo sprintf($link, get_year_link(get_the_time('Y')), get_the_time('Y')) . $sep;
-            echo sprintf($link, get_month_link(get_the_time('Y'), get_the_time('m')), get_the_time('F'));
-            if ($show_current) echo $sep . $before . get_the_time('d') . $after;
-
-        } elseif (is_month()) {
-            if ($show_home_link) echo $sep;
-            echo sprintf($link, get_year_link(get_the_time('Y')), get_the_time('Y'));
-            if ($show_current) echo $sep . $before . get_the_time('F') . $after;
-
-        } elseif (is_year()) {
-            if ($show_home_link && $show_current) echo $sep;
-            if ($show_current) echo $before . get_the_time('Y') . $after;
-
-        } elseif (is_single() && !is_attachment()) {
-            if ($show_home_link) echo $sep;
-            if (get_post_type() != 'post') {
-                $post_type = get_post_type_object(get_post_type());
-                $slug = $post_type->rewrite;
-                printf($link, $home_url . $slug['slug'] . '/', $post_type->labels->singular_name);
-                if ($show_current) echo $sep . $before . get_the_title() . $after;
-            } else {
-                $cat = get_the_category();
-                $cat = $cat[0];
-                $cats = get_category_parents($cat, TRUE, $sep);
-                if (!$show_current || get_query_var('cpage')) $cats = preg_replace("#^(.+)$sep$#", "$1", $cats);
-                $cats = preg_replace('#<a([^>]+)>([^<]+)<\/a>#', $link_before . '<a$1' . $link_attr . '>' . $link_in_before . '$2' . $link_in_after . '</a>' . $link_after, $cats);
-                echo $cats;
-                if (get_query_var('cpage')) {
-                    echo $sep . sprintf($link, get_permalink(), get_the_title()) . $sep . $before . sprintf($text['cpage'], get_query_var('cpage')) . $after;
-                } else {
-                    if ($show_current) echo $before . get_the_title() . $after;
-                }
-            }
-
-            // custom post type
-        } elseif (!is_single() && !is_page() && get_post_type() != 'post' && !is_404()) {
-            $post_type = get_post_type_object(get_post_type());
-            if (get_query_var('paged')) {
-                echo $sep . sprintf($link, get_post_type_archive_link($post_type->name), $post_type->label) . $sep . $before . sprintf($text['page'], get_query_var('paged')) . $after;
-            } else {
-                if ($show_current) echo $sep . $before . $post_type->label . $after;
-            }
-
-        } elseif (is_attachment()) {
-            if ($show_home_link) echo $sep;
-            $parent = get_post($parent_id);
-            $cat = get_the_category($parent->ID);
-            $cat = $cat[0];
-            if ($cat) {
-                $cats = get_category_parents($cat, TRUE, $sep);
-                $cats = preg_replace('#<a([^>]+)>([^<]+)<\/a>#', $link_before . '<a$1' . $link_attr . '>' . $link_in_before . '$2' . $link_in_after . '</a>' . $link_after, $cats);
-                echo $cats;
-            }
-            printf($link, get_permalink($parent), $parent->post_title);
-            if ($show_current) echo $sep . $before . get_the_title() . $after;
-
-        } elseif (is_page() && !$parent_id) {
-            if ($show_current) echo $sep . $before . get_the_title() . $after;
-
-        } elseif (is_page() && $parent_id) {
-            if ($show_home_link) echo $sep;
-            if ($parent_id != $frontpage_id) {
-                $breadcrumbs = array();
-                while ($parent_id) {
-                    $page = get_page($parent_id);
-                    if ($parent_id != $frontpage_id) {
-                        $breadcrumbs[] = sprintf($link, get_permalink($page->ID), get_the_title($page->ID));
-                    }
-                    $parent_id = $page->post_parent;
-                }
-                $breadcrumbs = array_reverse($breadcrumbs);
-                for ($i = 0; $i < count($breadcrumbs); $i++) {
-                    echo $breadcrumbs[$i];
-                    if ($i != count($breadcrumbs) - 1) echo $sep;
-                }
-            }
-            if ($show_current) echo $sep . $before . get_the_title() . $after;
-
-        } elseif (is_tag()) {
-            if (get_query_var('paged')) {
-                $tag_id = get_queried_object_id();
-                $tag = get_tag($tag_id);
-                echo $sep . sprintf($link, get_tag_link($tag_id), $tag->name) . $sep . $before . sprintf($text['page'], get_query_var('paged')) . $after;
-            } else {
-                if ($show_current) echo $sep . $before . sprintf($text['tag'], single_tag_title('', false)) . $after;
-            }
-
-        } elseif (is_author()) {
-            global $author;
-            $author = get_userdata($author);
-            if (get_query_var('paged')) {
-                if ($show_home_link) echo $sep;
-                echo sprintf($link, get_author_posts_url($author->ID), $author->display_name) . $sep . $before . sprintf($text['page'], get_query_var('paged')) . $after;
-            } else {
-                if ($show_home_link && $show_current) echo $sep;
-                if ($show_current) echo $before . sprintf($text['author'], $author->display_name) . $after;
-            }
-
-        } elseif (is_404()) {
-            if ($show_home_link && $show_current) echo $sep;
-            if ($show_current) echo $before . $text['404'] . $after;
-
-        } elseif (has_post_format() && !is_singular()) {
-            if ($show_home_link) echo $sep;
-            echo get_post_format_string(get_post_format());
-        }
-
-        echo $wrap_after;
-
-    }
-}
-
 
 /**
  * AJAX Load More
@@ -643,14 +422,14 @@ function be_ajax_load_product()
 
     //$args['post_type'] = isset( $args['post_type'] ) ? esc_attr( $args['post_type'] ) : 'post';
 
-    $args  = [
+    $args = [
         'post_type' => $_POST['query'],
         'tax_query' => array(
             'relation' => 'AND',
             array(
                 'taxonomy' => 'product_cat',
                 'field' => 'slug',
-                'terms' =>   $_POST['slug']
+                'terms' => $_POST['slug']
             )
         ),
         'posts_per_page' => -1,
@@ -660,28 +439,27 @@ function be_ajax_load_product()
     $loop = new WP_Query($args);
 
 
-    $slider_content = $slider_right_content  = '';
+    $slider_content = $slider_right_content = '';
     $i = 0;
     if ($loop->have_posts()): while ($loop->have_posts()): $loop->the_post();
-        $slider_content .=  be_post_product($i);
-        $slider_right_content .=  be_post_product_right($i);
+        $slider_content .= be_post_product($i);
+        $slider_right_content .= be_post_product_right($i);
 
-    $i++;
+        $i++;
     endwhile; endif;
-    $slider_before =  '<ul class="'.$_POST['type'].'-slider" data-slider="'.$_POST['type'].'-slider">';
-    $slider_after= '  </ul>';
-    $slider_right_before =  '
+    $slider_before = '<ul class="' . $_POST['type'] . '-slider" data-slider="' . $_POST['type'] . '-slider">';
+    $slider_after = '  </ul>';
+    $slider_right_before = '
                                                  <div class="title-section-sub-section"> 
                                                 </div> 
-                                                <ul class="'.$_POST['type'].'-slider-nav clearfix" data-slider="'.$_POST['type'].'-slider">';
-    $slider_right_after= '  </ul> ';
+                                                <ul class="' . $_POST['type'] . '-slider-nav clearfix" data-slider="' . $_POST['type'] . '-slider">';
+    $slider_right_after = '  </ul> ';
 
 
+    $slider = $slider_before . $slider_content . $slider_after;
 
-    $slider =  $slider_before . $slider_content . $slider_after;
-
-    $slider_right =  $slider_right_before . $slider_right_content . $slider_right_after;
-    echo json_encode(['first' =>$slider , 'second' => $slider_right ]);
+    $slider_right = $slider_right_before . $slider_right_content . $slider_right_after;
+    echo json_encode(['first' => $slider, 'second' => $slider_right]);
 
     wp_reset_postdata();
     $data = ob_get_clean();
@@ -695,180 +473,111 @@ add_action('wp_ajax_nopriv_be_ajax_load_product', 'be_ajax_load_product');
 function be_post_product($i)
 {
 
-        $img_url = wp_get_attachment_url(get_post_thumbnail_id(get_the_ID()), 'full');
-        $img_url = aq_resize($img_url, 200, 250, true);
+    $img_url = wp_get_attachment_url(get_post_thumbnail_id(get_the_ID()), 'full');
+    $img_url = aq_resize($img_url, 200, 250, true);
 
-         return  ' 
-          <li data-title="'.get_the_title(get_the_ID()).'" data-url="'.get_the_permalink(get_the_ID()).'">
-                <img src="'.$img_url.'" alt="'.get_the_title(get_the_ID()).'"/>
+    return ' 
+          <li data-title="' . get_the_title(get_the_ID()) . '" data-url="' . get_the_permalink(get_the_ID()) . '">
+                <img src="' . $img_url . '" alt="' . get_the_title(get_the_ID()) . '"/>
           </li> 
          ';
 
 }
+
 function be_post_product_right($i)
 {
 
-        $img_url = wp_get_attachment_url(get_post_thumbnail_id(get_the_ID()), 'full');
-        $img_url = aq_resize($img_url, 50, 62, true);
+    $img_url = wp_get_attachment_url(get_post_thumbnail_id(get_the_ID()), 'full');
+    $img_url = aq_resize($img_url, 50, 62, true);
 
-        if($i == 0){
-            $active_class = 'class="active"';
-        }else{
-            $active_class = '';
-        }
-         return  ' 
-            <li '.$active_class.'>
-                 <img src="'.$img_url.'" alt="'.get_the_title(get_the_ID()).'"/>
+    if ($i == 0) {
+        $active_class = 'class="active"';
+    } else {
+        $active_class = '';
+    }
+    return ' 
+            <li ' . $active_class . '>
+                 <img src="' . $img_url . '" alt="' . get_the_title(get_the_ID()) . '"/>
            </li> 
          ';
 
 }
 
-
-
-/*---Move Product Title*/
-remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_title', 5);
-add_action('woocommerce_before_single_product_summary', 'woocommerce_template_single_title', 5);
-
 /*
- * Content below "Add to cart" Button.
- */
-add_action('woocommerce_after_single_product_summary', 'add_content_after_addtocart_button_func2');
+ * *  Composer options
+*/
+vc_add_param("vc_row", array(
+    "type" => "dropdown",
+    "group" => "Light",
+    "class" => "",
+    "heading" => "Вид строки",
+    "param_name" => "type_row",
+    "value" => array(
+        "Во всю ширину" => "full_width",
+        "Использовать контейнер" => "in_container",
 
-function add_content_after_addtocart_button_func2()
+    )
+));
+
+
+vc_map(array(
+    "name" => __("Слайдер", "js_composer"),
+    "base" => "main_slider",
+    "params" => array()
+));
+
+add_shortcode('main_slider', 'vc_main_slider_function');
+function vc_main_slider_function($atts, $content)
 {
+    extract(shortcode_atts(array(), $atts));
+    $argsslideer = array(
+        'posts_per_page' => -1,
+        'post_type' => 'slider',
+        'status' => 'publish'
+    );
 
-    // Echo content.
-    echo '<div class="after-content">'.get_the_content(get_the_ID()).'</div>';
-
-}
-/*
- *  Change position price
- */
-remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 10);
-
-/*
- *   Remove Tabs
- */
-remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10);
-remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15);
+    $the_query_slider = new WP_Query($argsslideer);
 
 
 
-
-/*
- *  Change position meta
- */
-
-remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
-add_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 20);
-/*
- * * Before button add
- */
-function my_content($content)
-{
-    global $product;
-    $price_html = $product->get_price();
+    $html = ' <div class="home-slider-walpaper"><div class="home-slider">';
+    while ($the_query_slider->have_posts()) :
+        $the_query_slider->the_post();
+        $post_id_slider = $the_query_slider->post->ID;
 
 
-    $content .= '<div class="custom_content">
-                    <h3>Цена</h3>
-                    <div class="price-single">' . wc_price($price_html, array('currency' => ' ')) . ' Р</div>
-                    ';
-    if ($product->is_in_stock()) {
-        $content .= '<div class="stock" >' . $product->get_stock_quantity() . __(' <i class="fas fa-check-circle"></i> в наличии', 'envy') . '</div>';
-    }
-    $content .= '            </div>';
-    return $content;
-}
-
-add_filter('woocommerce_short_description', 'my_content', 10, 2);
-
-/*
- *  Text button add
- */
-add_filter('single_add_to_cart_text', 'woo_custom_cart_button_text');
-function woo_custom_cart_button_text()
-{
-    return __('Заказать', 'woocommerce');
-}
-/*
- * Content below "Add to cart" Button.
- */
-add_action('woocommerce_after_add_to_cart_button', 'add_content_after_addtocart_button_func');
-
-function add_content_after_addtocart_button_func()
-{
-
-    // Echo content.
-    echo '<div class="second_content">
-            <h3>как купить понравившуюся модель?</h3>
-            <p>
-            Купить понравившуюся модель можно в магазине, адрес которого указан на странице товара.
-            <br>
-            <br>
-            Для удобства Вы можете забронировать свой размер через сайт. Вашу пару отложат в магазине на 1 день. Придя в магазин, Вам надо будет просто назвать ФИО и номер заказа. 
-            <br>
-            <br>
-            Доставка товара на дом и в другие города в настоящее время не осуществляется.
-            </p>
-        </div>';
-
-}
-
-/**
- * Show cart contents / total Ajax
- */
-add_filter( 'woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment' );
-
-function woocommerce_header_add_to_cart_fragment( $fragments ) {
-    global $woocommerce;
-
-    ob_start();
-
-    ?>
-    <a class="cart-customlocation" href="<?php echo esc_url(wc_get_cart_url()); ?>" title="<?php _e('Перейти в корзину', 'woothemes'); ?>"><?php echo sprintf(_n('%d item', '%d items', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count);?> - <?php echo $woocommerce->cart->get_cart_total(); ?></a>
-    <?php
-    $fragments['a.cart-customlocation'] = ob_get_clean();
-    return $fragments;
-}
-
-remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10);
-add_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10);
+        $html .= '<div class="item-home-slider" style="background:  url('.wp_get_attachment_url(get_post_thumbnail_id($post_id_slider), 'full').'); ">
+                        <div class="content-home-slider">
+                            <div class="container relative clearfix">
+                                <div class="slider-block-content-walpaper ">
+                                     <h2>
+                                        '.get_the_title($post_id_slider).'
+                                    </h2>
+                                </div>
+                            </div>
+					    </div>
+                    </div>';
 
 
-if ( ! function_exists( 'woocommerce_template_loop_product_thumbnail' ) ) {
-    function woocommerce_template_loop_product_thumbnail() {
-        echo woocommerce_get_product_thumbnail();
-    }
-}
-if ( ! function_exists( 'woocommerce_get_product_thumbnail' ) ) {
-    function woocommerce_get_product_thumbnail( $size = 'product', $placeholder_width = 0, $placeholder_height = 0  ) {
-        global $post, $woocommerce;
-        $output = '<div class="imagewrapper">';
 
-        if ( has_post_thumbnail() ) {
-            $output .= get_the_post_thumbnail( get_the_ID(), $size );
-        }
-        $output .= '</div>';
-        return $output;
-    }
-}
-/*
- * *
- *  Send Letter Form Order form
- */
-$emailto = get_field('email', 'option') ? get_field('email', 'option') : 'example@mail.ru';
-if(isset($_POST['phonenumber'])){
-    $phone = $_POST['phonenumber'];
-    $top = $_POST['topfield'];
-    $center = $_POST['centerfield'];
-    $bottom = $_POST['bottomfield'];
-$to      = $emailto;
-$subject = 'Заказ формы';
-$message = 'Номер телефона: '.$phone. "\r\n" . 'Футболка:'.$top. "\r\n" .'Шорты: '.$center. "\r\n" .'Гетры: '.$bottom;
-$headers = 'From: noreply@xn--80ablmatscnacsedop0q.xn--p1ai/' . "\r\n" .
-    'X-Mailer: PHP/' . phpversion();
+    endwhile;
 
-mail($to, $subject, $message, $headers);
+
+    $html .= ' </div> 
+                <img class="img-overlay" src="'.get_theme_file_uri('/assets/images/overlay-slider.png').'" alt="фон слайдера" />
+                 <div class="arrow-slder">
+                <div class="container relative clearfix">
+                    <a href="#" class="nav-link left">
+                        <img src="'.get_theme_file_uri('/assets/images/arr.png').'">
+                    </a>
+                    <a href="#" class="nav-link right">
+                        <img src="'.get_theme_file_uri('/assets/images/arr.png').'">
+                    </a>
+                </div>
+            </div>
+               </div> 
+ 
+ ';
+
+    return $html;
 }
