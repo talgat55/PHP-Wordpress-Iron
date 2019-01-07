@@ -1,6 +1,23 @@
 .relative {
   position: relative; }
 
+.hide-title {
+  margin: 0;
+  padding: 0;
+  height: 0;
+  overflow: hidden; }
+
+.wpb_text_column.wpb_content_element.page-title {
+  margin: 0; }
+
+.page-title h2 {
+  font-family: "MyriadPro-Bold";
+  font-size: 24px;
+  line-height: 1.5;
+  color: #333333;
+  margin-bottom: 20px !important;
+  margin-top: 30px; }
+
 .top-header {
   padding: 22px 0 28px 0; }
 
@@ -150,6 +167,93 @@ a.nav-link.left.slick-arrow {
 
 .slick-dots li button:before {
   display: none; }
+
+.products-cats {
+  overflow: hidden;
+  padding: 0; }
+  .products-cats li {
+    list-style: none; }
+    .products-cats li img {
+      max-height: 152px; }
+    .products-cats li h3 {
+      margin: 0;
+      font-family: "MyriadPro-Regular";
+      font-size: 16px;
+      line-height: 1.5;
+      color: #fff;
+      text-align: center;
+      background: #ccb080;
+      padding: 10px; }
+
+.product-cat-item-walp {
+  height: 210px;
+  width: 260px; }
+
+.product-cat-item:nth-of-type(3n+2) .product-cat-item-walp {
+  margin: 0 auto; }
+
+.product-cat-item:nth-of-type(3n+3) .product-cat-item-walp {
+  margin: 0 0 0 auto; }
+
+.product-cat-item-holder {
+  -webkit-border-radius: 18px;
+          border-radius: 18px;
+  position: relative;
+  background: #fff;
+  overflow: hidden;
+  -webkit-box-shadow: 2px 5px 9px 5px #eae5e5ee;
+          box-shadow: 2px 5px 9px 5px #eae5e5ee;
+  margin-bottom: 20px;
+  text-decoration: none;
+  display: block; }
+  .product-cat-item-holder:hover {
+    text-decoration: none; }
+    .product-cat-item-holder:hover h3 {
+      background: #ababab; }
+  .product-cat-item-holder .img-block {
+    height: 152px;
+    text-align: center; }
+
+section.products-class {
+  background: url(../images/product-bg.png);
+  -webkit-background-size: cover;
+          background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center; }
+
+.price--link-block {
+  margin-top: 40px;
+  margin-bottom: 40px; }
+
+.link-all-prices {
+  display: table;
+  margin: 0 auto; }
+  .link-all-prices .img {
+    float: left;
+    background: #9d9d9c;
+    padding: 5px 15px 5px 30px;
+    -webkit-border-top-left-radius: 35px;
+            border-top-left-radius: 35px;
+    -webkit-border-bottom-left-radius: 35px;
+            border-bottom-left-radius: 35px; }
+  .link-all-prices p {
+    margin: 0;
+    display: inline-block;
+    background: -webkit-gradient(linear, left top, right top, from(#b7b6b5), to(#7f7e7e));
+    background: -webkit-linear-gradient(left, #b7b6b5 0%, #7f7e7e 100%);
+    background: -o-linear-gradient(left, #b7b6b5 0%, #7f7e7e 100%);
+    background: linear-gradient(to right, #b7b6b5 0%, #7f7e7e 100%);
+    color: #fff;
+    font-size: 24px;
+    line-height: 1.5;
+    padding-left: 11px;
+    padding-top: 13px;
+    padding-bottom: 12px;
+    padding-right: 23px;
+    -webkit-border-top-right-radius: 31px;
+            border-top-right-radius: 31px;
+    -webkit-border-bottom-right-radius: 31px;
+            border-bottom-right-radius: 31px; }
 
 .footer-policy-link {
   font-family: "MyriadPro-Regular";

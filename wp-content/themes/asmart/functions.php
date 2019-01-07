@@ -30,6 +30,7 @@ add_image_size('product-item', 244, 300, true);
 add_image_size('product-item-thumb', 50, 62, true);
 add_image_size('product', 260, 200, false);
 add_image_size('woocommerce_single', 260, 200, false);
+add_image_size('category_products', 260, 155, false);
 
 /**
  * Enqueue scripts and styles.
@@ -159,34 +160,66 @@ function post_type_partners()
 }
 
 /*
-*  Rgister Post Type Testimonials
+*  Rgister Post Type Products
 */
 
-add_action('init', 'post_type_review');
+add_action('init', 'post_type_products');
 
-function post_type_review()
+function post_type_products()
 {
     $labels = array(
-        'name' => 'Отзывы',
-        'singular_name' => 'Отзывы',
-        'all_items' => 'Отзывы',
-        'menu_name' => 'Отзывы' // ссылка в меню в админке
+        'name' => 'Товары',
+        'singular_name' => 'Товары',
+        'all_items' => 'Товары',
+        'menu_name' => 'Товары' // ссылка в меню в админке
     );
     $args = array(
         'labels' => $labels,
         'public' => true,
         'menu_position' => 5,
         'has_archive' => true,
-        'query_var' => "review",
+        'query_var' => "products",
         'supports' => array(
             'title',
             'editor',
             'thumbnail'
         )
     );
-    register_post_type('review', $args);
+    register_post_type('products', $args);
 }
+add_action( 'init', 'create_products_taxonomy', 0 );
 
+function create_products_taxonomy() {
+
+// Labels part for the GUI
+
+    $labels = array(
+        'name' => _x( 'Категории', 'light' ),
+        'singular_name' => _x( 'Категории', 'light' ),
+        'search_items' =>  __( 'Поиск Категории' ),
+        'popular_items' => __( 'Популярные Категории' ),
+        'all_items' => __( 'Все Категории' ),
+        'parent_item' => null,
+        'parent_item_colon' => null,
+        'edit_item' => __( 'Редактировать Категорию' ),
+        'update_item' => __( 'Обновить Категорию' ),
+        'add_new_item' => __( 'Добавить новую Категорию' ),
+        'new_item_name' => __( 'Категория' ),
+        'menu_name' => __( 'Категории' ),
+    );
+
+// Now register the non-hierarchical taxonomy like tag
+
+    register_taxonomy('product_cats','products',array(
+        'hierarchical' => true,
+        'labels' => $labels,
+        'show_ui' => true,
+        'show_admin_column' => true,
+        'update_count_callback' => '_update_post_term_count',
+        'query_var' => true,
+        'rewrite' => array( 'slug' => 'product_cat' ),
+    ));
+}
 
 /*
 *  Rgister Post Type Settings
@@ -503,6 +536,24 @@ function be_post_product_right($i)
 
 }
 
+
+/*
+*  Rgister Post Type Settings
+*/
+if (function_exists('acf_add_options_page')) {
+
+    // Let's add our Options Page
+    acf_add_options_page(array(
+        'page_title' => 'Настройки Темы',
+        'menu_title' => 'Настройки Темы',
+        'menu_slug' => 'theme-options',
+        'capability' => 'edit_posts'
+    ));
+
+
+}
+
+
 /*
  * *  Composer options
 */
@@ -578,6 +629,62 @@ function vc_main_slider_function($atts, $content)
                </div> 
  
  ';
+
+    return $html;
+}
+
+vc_map(array(
+    "name" => __("Товары", "js_composer"),
+    "base" => "products",
+    "params" => array()
+));
+add_shortcode('products', 'vc_products_function');
+function vc_products_function($atts, $content)
+{
+    extract(shortcode_atts(array(), $atts));
+
+    $terms = get_terms([
+        'taxonomy'=> 'product_cats',
+        'hide_empty' => false
+    ]);
+
+
+
+    $html = ' <ul class="products-cats">';
+
+    foreach ($terms as $term){
+
+        $url = get_field('thumbnails', $term);
+
+        $image = $url["sizes"]["category_products"];
+        $html .= '<li   class="product-cat-item col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="row">
+                    <div class="product-cat-item-walp">
+                        <a  href="'.get_the_permalink().'" class="product-cat-item-holder">
+                                <div class="img-block"><img src="'.$image.'"  alt="изображение категории"/></div>
+                                
+                                <h3>
+                                    '.$term->name.'
+                                </h3>
+                           
+                        </a>
+                    </div>
+                    </div>
+                 </li>';
+    }
+
+
+    $html .= ' </ul>';
+    $html .= '<div class="price--link-block">
+
+                <a href="'.get_field('file_price', 'option')['url'].'" class="link-all-prices">
+                    <div class="img"><img src="'.get_theme_file_uri('/assets/images/icon-pdf.png').'"  alt=" картинка ссылка" /></div>
+                    <p>
+                        Цены на товары
+                    </p>
+                </a>
+              </div>';
+
 
     return $html;
 }
