@@ -426,7 +426,7 @@ function afterchable(){
 
     HomeSlider();
     CertCarousel();
-
+    InitMaps();
 
 
 // end redy funvtion
@@ -462,8 +462,60 @@ function CertCarousel() {
         slidesToShow: 3,
         slidesToScroll: 3,
         dots: true,
-        autoplay: false,
+        autoplay: true,
         arrows: false
 
     });
+}
+/*
+*  Maps
+*/
+function InitMaps() {
+    if (jQuery('#map').length) {
+
+        ymaps.ready(function () {
+            var myMap = new ymaps.Map('map', {
+                    center: [54.997053, 73.350672],
+                    zoom: 12,
+                    controls: ['zoomControl']
+                }, {
+                    // searchControlProvider: 'yandex#search'
+                }),
+
+                // Создаём макет содержимого.
+                /*  MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+                      '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+                  ),*/
+
+                myPlacemark = new ymaps.Placemark([54.997053, 73.350672], {
+                    id: '1'
+                }, {
+
+                    // Опции.
+                    // Необходимо указать данный тип макета.
+                    iconLayout: 'default#image',
+                    // Своё изображение иконки метки.
+                    //
+                    iconImageHref: 'http://predprinimatel55.local/assets/images/marker.png',
+                    // // Размеры метки.
+                    iconImageSize: [27, 37],
+                    // // Смещение левого верхнего угла иконки относительно
+                    // // её "ножки" (точки привязки).
+                    iconImageOffset: [-14, -37]
+                });
+
+
+            myMap.geoObjects
+
+                .add(myPlacemark);
+
+            myMap.behaviors.disable('scrollZoom');
+            myMap.behaviors.disable('multiTouch');
+
+
+            myMap.behaviors.disable('drag');
+
+
+        });
+    }
 }

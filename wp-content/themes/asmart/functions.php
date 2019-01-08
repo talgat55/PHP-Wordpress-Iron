@@ -32,6 +32,7 @@ add_image_size('product', 260, 200, false);
 add_image_size('woocommerce_single', 260, 200, false);
 add_image_size('category_products', 260, 155, false);
 add_image_size('cert_image', 360, 230, false);
+add_image_size('partner_image', 300, 75, false);
 
 /**
  * Enqueue scripts and styles.
@@ -64,20 +65,16 @@ function th_scripts()
     wp_enqueue_script('slick.min', get_theme_file_uri('/assets/js/slick.min.js'), array(), '');
     wp_enqueue_script('jquery.matchHeight', get_theme_file_uri('/assets/js/jquery.matchHeight.js'), array(), '');
     wp_enqueue_script('jquery.inputmask', get_theme_file_uri('/assets/js/jquery.inputmask.js'), array(), '');
+    if (is_front_page()) {
 
+        wp_enqueue_script('yandex-maps', '//api-maps.yandex.ru/2.1/?lang=ru_RU', array(), '');
+
+
+    }
 
     wp_enqueue_script('lightbox', get_theme_file_uri('/assets/js/lightbox.min.js'), array(), '');
 
     wp_enqueue_script('default', get_theme_file_uri('/assets/js/default.js'), array(), '');
-    if (is_page_template('page-contact.php')) {
-
-        wp_enqueue_script('google-maps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDkewQZi7iY6eOtlXajXXHFWHECGYWqfMs', array(), '2');
-
-        wp_enqueue_script('maps', get_theme_file_uri('/assets/js/maps.js'), array(), '2');
-    }
-    if (is_front_page() OR is_home()) {
-        wp_enqueue_script('vk', 'https://vk.com/js/api/openapi.js?151', array(), '');
-    }
 
 
     global $wp_query;
@@ -181,37 +178,39 @@ function post_type_products()
     );
     register_post_type('products', $args);
 }
-add_action( 'init', 'create_products_taxonomy', 0 );
 
-function create_products_taxonomy() {
+add_action('init', 'create_products_taxonomy', 0);
+
+function create_products_taxonomy()
+{
 
 // Labels part for the GUI
 
     $labels = array(
-        'name' => _x( 'Категории', 'light' ),
-        'singular_name' => _x( 'Категории', 'light' ),
-        'search_items' =>  __( 'Поиск Категории' ),
-        'popular_items' => __( 'Популярные Категории' ),
-        'all_items' => __( 'Все Категории' ),
+        'name' => _x('Категории', 'light'),
+        'singular_name' => _x('Категории', 'light'),
+        'search_items' => __('Поиск Категории'),
+        'popular_items' => __('Популярные Категории'),
+        'all_items' => __('Все Категории'),
         'parent_item' => null,
         'parent_item_colon' => null,
-        'edit_item' => __( 'Редактировать Категорию' ),
-        'update_item' => __( 'Обновить Категорию' ),
-        'add_new_item' => __( 'Добавить новую Категорию' ),
-        'new_item_name' => __( 'Категория' ),
-        'menu_name' => __( 'Категории' ),
+        'edit_item' => __('Редактировать Категорию'),
+        'update_item' => __('Обновить Категорию'),
+        'add_new_item' => __('Добавить новую Категорию'),
+        'new_item_name' => __('Категория'),
+        'menu_name' => __('Категории'),
     );
 
 // Now register the non-hierarchical taxonomy like tag
 
-    register_taxonomy('product_cats','products',array(
+    register_taxonomy('product_cats', 'products', array(
         'hierarchical' => true,
         'labels' => $labels,
         'show_ui' => true,
         'show_admin_column' => true,
         'update_count_callback' => '_update_post_term_count',
         'query_var' => true,
-        'rewrite' => array( 'slug' => 'product_cat' ),
+        'rewrite' => array('slug' => 'product_cat'),
     ));
 }
 
@@ -586,19 +585,18 @@ function vc_main_slider_function($atts, $content)
     $the_query_slider = new WP_Query($argsslideer);
 
 
-
     $html = ' <div class="home-slider-walpaper"><div class="home-slider">';
     while ($the_query_slider->have_posts()) :
         $the_query_slider->the_post();
         $post_id_slider = $the_query_slider->post->ID;
 
 
-        $html .= '<div class="item-home-slider" style="background:  url('.wp_get_attachment_url(get_post_thumbnail_id($post_id_slider), 'full').'); ">
+        $html .= '<div class="item-home-slider" style="background:  url(' . wp_get_attachment_url(get_post_thumbnail_id($post_id_slider), 'full') . '); ">
                         <div class="content-home-slider">
                             <div class="container relative clearfix">
                                 <div class="slider-block-content-walpaper ">
                                      <h2>
-                                        '.get_the_title($post_id_slider).'
+                                        ' . get_the_title($post_id_slider) . '
                                     </h2>
                                 </div>
                             </div>
@@ -606,19 +604,18 @@ function vc_main_slider_function($atts, $content)
                     </div>';
 
 
-
     endwhile;
 
 
     $html .= ' </div> 
-                <img class="img-overlay" src="'.get_theme_file_uri('/assets/images/overlay-slider.png').'" alt="фон слайдера" />
+                <img class="img-overlay" src="' . get_theme_file_uri('/assets/images/overlay-slider.png') . '" alt="фон слайдера" />
                  <div class="arrow-slder">
                 <div class="container relative clearfix">
                     <a href="#" class="nav-link left">
-                        <img src="'.get_theme_file_uri('/assets/images/arr.png').'">
+                        <img src="' . get_theme_file_uri('/assets/images/arr.png') . '">
                     </a>
                     <a href="#" class="nav-link right">
-                        <img src="'.get_theme_file_uri('/assets/images/arr.png').'">
+                        <img src="' . get_theme_file_uri('/assets/images/arr.png') . '">
                     </a>
                 </div>
             </div>
@@ -628,6 +625,7 @@ function vc_main_slider_function($atts, $content)
 
     return $html;
 }
+
 /*
  * *  Products
  */
@@ -642,15 +640,14 @@ function vc_products_function($atts, $content)
     extract(shortcode_atts(array(), $atts));
 
     $terms = get_terms([
-        'taxonomy'=> 'product_cats',
+        'taxonomy' => 'product_cats',
         'hide_empty' => false
     ]);
 
 
-
     $html = ' <ul class="products-cats">';
 
-    foreach ($terms as $term){
+    foreach ($terms as $term) {
 
         $url = get_field('thumbnails', $term);
 
@@ -658,11 +655,11 @@ function vc_products_function($atts, $content)
         $html .= '<li   class="product-cat-item col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="row">
                     <div class="product-cat-item-walp">
-                        <a  href="'.get_term_link($term->term_id, 'product_cats').'" class="product-cat-item-holder">
-                                <div class="img-block"><img src="'.$image.'"  alt="изображение категории"/></div>
+                        <a  href="' . get_term_link($term->term_id, 'product_cats') . '" class="product-cat-item-holder">
+                                <div class="img-block"><img src="' . $image . '"  alt="изображение категории"/></div>
                                 
                                 <h3>
-                                    '.$term->name.'
+                                    ' . $term->name . '
                                 </h3>
                            
                         </a>
@@ -675,8 +672,8 @@ function vc_products_function($atts, $content)
     $html .= ' </ul>';
     $html .= '<div class="price--link-block">
 
-                <a href="'.get_field('file_price', 'option')['url'].'" class="link-all-prices">
-                    <div class="img"><img src="'.get_theme_file_uri('/assets/images/icon-pdf.png').'"  alt=" картинка ссылка" /></div>
+                <a href="' . get_field('file_price', 'option')['url'] . '" class="link-all-prices">
+                    <div class="img"><img src="' . get_theme_file_uri('/assets/images/icon-pdf.png') . '"  alt=" картинка ссылка" /></div>
                     <p>
                         Цены на товары
                     </p>
@@ -686,6 +683,7 @@ function vc_products_function($atts, $content)
 
     return $html;
 }
+
 /*
  *  Certs
  */
@@ -718,21 +716,89 @@ function vc_certs_row_function($atts, $content)
 
         $html .= '<div class="item-cert-slider">
                         <div class="item-cert-slider-walp">
-                            <a href="'.wp_get_attachment_url(get_post_thumbnail_id($post_id), 'full').'"  data-lightbox="roadtrip">
+                            <a href="' . wp_get_attachment_url(get_post_thumbnail_id($post_id), 'full') . '"  data-lightbox="roadtrip">
                                 <div class="img-overlay-sert">
-                                    <img src=" '.get_theme_file_uri('/assets/images/zoom-in.png').'" alt="Иконка увеличения"  />
+                                    <img src=" ' . get_theme_file_uri('/assets/images/zoom-in.png') . '" alt="Иконка увеличения"  />
                                 </div>
-                                <img class="main-img-cert" src=" '.wp_get_attachment_url(get_post_thumbnail_id($post_id), 'cert_image').'" alt="Сертификат"  />
+                                <img class="main-img-cert" src=" ' . wp_get_attachment_url(get_post_thumbnail_id($post_id), 'cert_image') . '" alt="Сертификат"  />
                             </a>
 					    </div>
                     </div>';
-
 
 
     endwhile;
 
     $html .= ' </ul>';
 
+
+    return $html;
+}/*
+ *  Map
+ */
+vc_map(array(
+    "name" => __("Карта Кастомная", "js_composer"),
+    "base" => "mapyandex",
+    "params" => array()
+));
+add_shortcode('mapyandex', 'vc_mapyandex_function');
+function vc_mapyandex_function($atts, $content)
+{
+    extract(shortcode_atts(array(), $atts));
+
+
+    $html = '<div class="map-holder">
+                <div id="map"></div>
+                <div class="map-content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                                <div class="map-content-firstblock">
+                                    <img class="image-contact" src="' . get_theme_file_uri('/assets/images/contact-form.png') . '" alt="изображение формы" />
+                                            <h3>
+                                                Оставьте свои контактные данные
+                                            </h3>
+                                    '.do_shortcode('[contact-form-7 id="68" title="Contact form 1"]').'
+                                
+                                </div>';
+
+    $html .= '     
+                                <div class="map-content-secondblock">
+                                             <h3>
+                                                Контакты
+                                            </h3>
+                                    <div class="contacts-block">
+                                        <ul class="lists-contacts-information">
+                                            <li>
+                                                <span>адрес:</span>
+                                                <p>'.get_field('adress', 'option').'</p>
+                                            </li>
+                                             <li>
+                                                <span>Телефон:</span>
+                                                <p>
+                                                <a href="tel:'.str_replace(['(',')', '-', '(моб.)' , 'моб.' , ' ' ], ['','','', '', '', ''], get_field('phone_one', 'option')).'">'.get_field('phone_one', 'option').'</a>
+                                                <a href="tel:'.str_replace(['(',')', '-', '(моб.)' , 'моб.' , ' '], ['','','', '', '', ''], get_field('phone_two', 'option')).'">'.get_field('phone_two', 'option').'</a>
+                                                <a href="tel:'.str_replace(['(',')', '-', '(моб.)' , 'моб.' , ' '], ['','','', '', '', ''], get_field('phone_tree', 'option')).'">'.get_field('phone_tree', 'option').'</a>
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <span>EMAIL:</span>
+                                                <p>
+                                                <a href="mailto:'.get_field('email', 'option').'">'.get_field('email', 'option').'</a> 
+                                                </p>
+                                            </li>
+                                        </ul>
+                                        
+                                    </div>
+                                
+                                </div>
+    
+    ';
+    $html .= '                                      
+                            </div>
+                        </div>           
+                    </div>
+                </div>
+            </div>';
 
 
     return $html;
