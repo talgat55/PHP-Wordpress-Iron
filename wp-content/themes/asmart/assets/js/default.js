@@ -434,7 +434,7 @@ function afterchable(){
 
 
     HomeSlider();
-
+    CertCarousel();
 
 
 
@@ -448,18 +448,31 @@ function afterchable(){
 function HomeSlider() {
 
 
-
-
-
     jQuery('.home-slider').slick({
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
         dots: true,
-        autoplay: false,
+        autoplay: true,
         prevArrow: jQuery('.arrow-slder .nav-link.right'),
         nextArrow: jQuery('.arrow-slder .nav-link.left')
 
     });
     jQuery('.home-slider .slick-dots').wrap('<div class="container" />');
+}
+/*
+*  Certificate carousel
+*/
+function CertCarousel() {
+
+
+    jQuery('.certs-list').slick({
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        dots: true,
+        autoplay: false,
+        arrows: false
+
+    });
 }

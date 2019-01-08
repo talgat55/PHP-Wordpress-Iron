@@ -255,6 +255,154 @@ section.products-class {
     -webkit-border-bottom-right-radius: 31px;
             border-bottom-right-radius: 31px; }
 
+.service-class h3 {
+  font-family: "MyriadPro-Bold";
+  font-size: 18px;
+  line-height: 1.5;
+  color: #2a2d2f;
+  margin-bottom: 0; }
+
+.service-class p {
+  color: #2a2d2f; }
+
+.feedback-class input[type=text] {
+  background: #f6f6f6;
+  border: none;
+  display: block;
+  text-align: center;
+  padding: 10px;
+  -webkit-border-radius: 22px;
+          border-radius: 22px;
+  margin: 0 auto 30px auto;
+  font-family: "MyriadPro-Regular";
+  font-size: 15px;
+  line-height: 1.5;
+  color: #b2b2b2;
+  width: 300px; }
+
+.feedback-class ::-webkit-input-placeholder {
+  font-family: "MyriadPro-Regular";
+  font-size: 15px;
+  line-height: 1.5;
+  color: #b2b2b2; }
+
+.feedback-class ::-moz-placeholder {
+  font-family: "MyriadPro-Regular";
+  font-size: 15px;
+  line-height: 1.5;
+  color: #b2b2b2; }
+
+.feedback-class :-ms-input-placeholder {
+  font-family: "MyriadPro-Regular";
+  font-size: 15px;
+  line-height: 1.5;
+  color: #b2b2b2; }
+
+.feedback-class :-moz-placeholder {
+  font-family: "MyriadPro-Regular";
+  font-size: 15px;
+  line-height: 1.5;
+  color: #b2b2b2; }
+
+.feedback-class input[type=submit] {
+  background: -webkit-gradient(linear, left top, right top, from(#868585), color-stop(18%, #868585), to(#bdbdbc));
+  background: -webkit-linear-gradient(left, #868585 0%, #868585 18%, #bdbdbc 100%);
+  background: -o-linear-gradient(left, #868585 0%, #868585 18%, #bdbdbc 100%);
+  background: linear-gradient(to right, #868585 0%, #868585 18%, #bdbdbc 100%);
+  border: none;
+  font-size: 18px;
+  line-height: 1.5;
+  font-family: "MyriadPro-Regular";
+  color: #fff;
+  -webkit-border-radius: 25px;
+          border-radius: 25px;
+  margin: 0 auto 30px auto;
+  padding: 10px 86px;
+  display: table; }
+  .feedback-class input[type=submit]:hover {
+    background: #ffc04e; }
+
+.pre-form p {
+  font-family: "MyriadPro-Regular";
+  font-size: 24px;
+  line-height: 1.5;
+  color: #9d9d9c;
+  margin-top: 150px;
+  padding-top: 50px; }
+
+.text-policy {
+  width: 300px;
+  margin: 0 auto  35px auto;
+  text-align: center;
+  color: #333333;
+  font-size: 18px; }
+  .text-policy a {
+    color: #ccb080;
+    text-decoration: underline; }
+
+section.sertificate-class {
+  background: url(../images/sertificate-bg.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover !important;
+          background-size: cover !important; }
+  section.sertificate-class .page-title h2 {
+    margin-bottom: 50px !important; }
+
+.certs-list {
+  margin: 0 -25px;
+  padding: 0;
+  overflow: hidden; }
+
+.item-cert-slider {
+  margin: 0 25px; }
+
+.item-cert-slider-walp img {
+  max-width: 100%; }
+
+.main-img-cert {
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  opacity: 1; }
+
+.img-overlay-sert {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+      -ms-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+  opacity: 0;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
+
+.item-cert-slider-walp a {
+  display: block;
+  position: relative; }
+  .item-cert-slider-walp a:hover .img-overlay-sert {
+    opacity: 1; }
+  .item-cert-slider-walp a:hover .main-img-cert {
+    opacity: .3; }
+
+.item-cert-slider-walp {
+  -webkit-border-radius: 10px;
+          border-radius: 10px;
+  overflow: hidden;
+  -webkit-box-shadow: 4px 7px 12px 1px #b3b2b2;
+          box-shadow: 4px 7px 12px 1px #b3b2b2;
+  margin-bottom: 70px; }
+
+.certs-list .slick-dots {
+  width: 100%;
+  bottom: 0; }
+  .certs-list .slick-dots li button {
+    background: #ababab; }
+
+.slick-dotted.slick-slider {
+  margin-bottom: 70px; }
+
 .footer-policy-link {
   font-family: "MyriadPro-Regular";
   font-size: 18px;

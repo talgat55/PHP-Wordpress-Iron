@@ -174,3 +174,147 @@ section.products-class
     padding-right: 23px
     border-top-right-radius: 31px
     border-bottom-right-radius: 31px
+
+
+//
+// Service
+//
+.service-class
+  h3
+    font-family: $font_bold
+    font-size: 18px
+    line-height: 1.5
+    color: #2a2d2f
+    margin-bottom: 0
+  p
+    color: #2a2d2f
+
+//
+// Feedback
+//
+.feedback-class
+  input[type=text]
+    background: #f6f6f6
+    border: none
+    display: block
+    text-align: center
+    padding: 10px
+    border-radius: 22px
+    margin: 0 auto 30px auto
+    font-family: $font_regular
+    font-size: 15px
+    line-height: 1.5
+    color: #b2b2b2
+    width: 300px
+  & ::-webkit-input-placeholder
+    font-family: $font_regular
+    font-size: 15px
+    line-height: 1.5
+    color: #b2b2b2
+
+  & ::-moz-placeholder
+    font-family: $font_regular
+    font-size: 15px
+    line-height: 1.5
+    color: #b2b2b2
+  & :-ms-input-placeholder
+    font-family: $font_regular
+    font-size: 15px
+    line-height: 1.5
+    color: #b2b2b2
+  & :-moz-placeholder
+    font-family: $font_regular
+    font-size: 15px
+    line-height: 1.5
+    color: #b2b2b2
+  input[type=submit]
+    background:  linear-gradient(to right, rgba(134,133,133,1) 0%, rgba(134,133,133,1) 18%, rgba(189,189,188,1) 100%)
+    border: none
+    font-size: 18px
+    line-height: 1.5
+    font-family: $font_regular
+    color: #fff
+    border-radius: 25px
+    margin: 0 auto 30px auto
+    padding: 10px 86px
+    display: table
+    &:hover
+      background: $color_yellow
+
+
+.pre-form
+  p
+    font-family: $font_regular
+    font-size: 24px
+    line-height: 1.5
+    color: #9d9d9c
+    margin-top: 150px
+    padding-top: 50px
+
+.text-policy
+  width: 300px
+  margin: 0 auto  35px auto
+  text-align: center
+  color: #333333
+  font-size: 18px
+  a
+    color: #ccb080
+    text-decoration: underline
+
+//
+// Certificate
+//
+section.sertificate-class
+  background: url(../images/sertificate-bg.png)
+  background-position: center center
+  background-repeat: no-repeat
+  background-size: cover!important
+  .page-title h2
+    margin-bottom: 50px!important
+
+.certs-list
+  margin: 0 -25px
+  padding: 0
+  overflow: hidden
+
+.item-cert-slider
+  margin: 0 25px
+
+.item-cert-slider-walp
+  img
+    max-width: 100%
+.main-img-cert
+  transition: all 0.3s ease
+  opacity: 1
+.img-overlay-sert
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translateX(-50%) translateY(-50%)
+  opacity: 0
+  transition: all 0.3s ease
+
+.item-cert-slider-walp a
+  display: block
+  position: relative
+  &:hover .img-overlay-sert
+    opacity: 1
+  &:hover .main-img-cert
+    opacity: .3
+
+.item-cert-slider-walp
+  border-radius: 10px
+  overflow: hidden
+  box-shadow: 4px 7px 12px 1px #b3b2b2
+  margin-bottom: 70px
+
+
+.certs-list .slick-dots
+  width: 100%
+  bottom: 0
+  li button
+    background: #ababab
+
+.slick-dotted.slick-slider
+  margin-bottom: 70px
+

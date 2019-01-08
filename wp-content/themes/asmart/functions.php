@@ -31,6 +31,7 @@ add_image_size('product-item-thumb', 50, 62, true);
 add_image_size('product', 260, 200, false);
 add_image_size('woocommerce_single', 260, 200, false);
 add_image_size('category_products', 260, 155, false);
+add_image_size('cert_image', 360, 230, false);
 
 /**
  * Enqueue scripts and styles.
@@ -131,32 +132,32 @@ function post_type_slider()
 
 
 /*
-*  Rgister Post Type Partners
+*  Rgister Post Type Certs
 */
 
-add_action('init', 'post_type_partners');
+add_action('init', 'post_type_certs');
 
-function post_type_partners()
+function post_type_certs()
 {
     $labels = array(
-        'name' => 'Партнеры',
-        'singular_name' => 'Партнеры',
-        'all_items' => 'Партнеры',
-        'menu_name' => 'Партнеры' // ссылка в меню в админке
+        'name' => 'Сертификаты',
+        'singular_name' => 'Сертификаты',
+        'all_items' => 'Сертификаты',
+        'menu_name' => 'Сертификаты' // ссылка в меню в админке
     );
     $args = array(
         'labels' => $labels,
         'public' => true,
         'menu_position' => 5,
         'has_archive' => true,
-        'query_var' => "partners",
+        'query_var' => "certs",
         'supports' => array(
             'title',
             'editor',
             'thumbnail'
         )
     );
-    register_post_type('partners', $args);
+    register_post_type('certs', $args);
 }
 
 /*
@@ -569,7 +570,9 @@ vc_add_param("vc_row", array(
 
     )
 ));
-
+/*
+ *  Slider
+ */
 
 vc_map(array(
     "name" => __("Слайдер", "js_composer"),
@@ -632,7 +635,9 @@ function vc_main_slider_function($atts, $content)
 
     return $html;
 }
-
+/*
+ * *  Products
+ */
 vc_map(array(
     "name" => __("Товары", "js_composer"),
     "base" => "products",
@@ -684,6 +689,57 @@ function vc_products_function($atts, $content)
                     </p>
                 </a>
               </div>';
+
+
+    return $html;
+}
+/*
+ *  Certs
+ */
+vc_map(array(
+    "name" => __("Сертификаты", "js_composer"),
+    "base" => "certs_row",
+    "params" => array()
+));
+add_shortcode('certs_row', 'vc_certs_row_function');
+function vc_certs_row_function($atts, $content)
+{
+    extract(shortcode_atts(array(), $atts));
+
+    $arg = array(
+        'posts_per_page' => -1,
+        'post_type' => 'certs',
+        'status' => 'publish'
+    );
+
+    $the_query = new WP_Query($arg);
+
+
+    $html = ' <ul class="certs-list">';
+
+
+    while ($the_query->have_posts()) :
+        $the_query->the_post();
+        $post_id = $the_query->post->ID;
+
+
+        $html .= '<div class="item-cert-slider">
+                        <div class="item-cert-slider-walp">
+                            <a href="'.wp_get_attachment_url(get_post_thumbnail_id($post_id), 'full').'">
+                                <div class="img-overlay-sert">
+                                    <img src=" '.get_theme_file_uri('/assets/images/zoom-in.png').'" alt="Иконка увеличения"  />
+                                </div>
+                                <img class="main-img-cert" src=" '.wp_get_attachment_url(get_post_thumbnail_id($post_id), 'cert_image').'" alt="Сертификат"  />
+                            </a>
+					    </div>
+                    </div>';
+
+
+
+    endwhile;
+
+    $html .= ' </ul>';
+
 
 
     return $html;
