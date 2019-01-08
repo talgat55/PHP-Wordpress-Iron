@@ -475,8 +475,8 @@ function InitMaps() {
 
         ymaps.ready(function () {
             var myMap = new ymaps.Map('map', {
-                    center: [54.997053, 73.350672],
-                    zoom: 12,
+                    center: [55.050375, 73.255150],
+                    zoom: 15,
                     controls: ['zoomControl']
                 }, {
                     // searchControlProvider: 'yandex#search'
@@ -487,7 +487,7 @@ function InitMaps() {
                       '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
                   ),*/
 
-                myPlacemark = new ymaps.Placemark([54.997053, 73.350672], {
+                myPlacemark = new ymaps.Placemark([55.050375, 73.255150], {
                     id: '1'
                 }, {
 
@@ -496,12 +496,12 @@ function InitMaps() {
                     iconLayout: 'default#image',
                     // Своё изображение иконки метки.
                     //
-                    iconImageHref: 'http://predprinimatel55.local/assets/images/marker.png',
+                    iconImageHref: 'http://iron.lightxdesign.ru/wp-content/themes/asmart/assets/images/marker.png',
                     // // Размеры метки.
-                    iconImageSize: [27, 37],
+                    iconImageSize: [45, 63],
                     // // Смещение левого верхнего угла иконки относительно
                     // // её "ножки" (точки привязки).
-                    iconImageOffset: [-14, -37]
+                    iconImageOffset: [-22, -63]
                 });
 
 

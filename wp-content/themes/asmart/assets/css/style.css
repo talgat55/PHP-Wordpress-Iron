@@ -552,6 +552,9 @@ section.sertificate-class {
     display: block;
     color: #333333; }
 
+.span.wpcf7-not-valid-tip {
+  text-align: center; }
+
 .footer-policy-link {
   font-family: "MyriadPro-Regular";
   font-size: 18px;
