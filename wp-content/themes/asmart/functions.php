@@ -50,8 +50,7 @@ function th_scripts()
     wp_enqueue_style('fontawesome-all', get_theme_file_uri('/assets/css/fontawesome-all.css'), array(), '');
     wp_enqueue_style('normalize', get_theme_file_uri('/assets/css/normalize.css'), array(), '');
     wp_enqueue_style('slick', get_theme_file_uri('/assets/css/slick.css'), array(), '');
-    wp_enqueue_style('lg-transitions', get_theme_file_uri('/assets/css/lg-transitions.css'), array(), '');
-    wp_enqueue_style('lightgallery', get_theme_file_uri('/assets/css/lightgallery.css'), array(), '');
+    wp_enqueue_style('lightbox.min.css', get_theme_file_uri('/assets/css/lightbox.min.css'), array(), '');
     wp_enqueue_style('slick-theme', get_theme_file_uri('/assets/css/slick-theme.css'), array(), '');
     wp_enqueue_style('main-style', get_theme_file_uri('/assets/css/style.css'), array(), '');
     // wp_enqueue_style( 'owl.theme.default.min', get_theme_file_uri(  '/assets/css/owl.theme.default.min.css'),array(), '' );
@@ -64,17 +63,11 @@ function th_scripts()
     wp_enqueue_script('jquery', get_theme_file_uri('/assets/js/jquery-3.2.1.min.js'), array(), '');
     wp_enqueue_script('slick.min', get_theme_file_uri('/assets/js/slick.min.js'), array(), '');
     wp_enqueue_script('jquery.matchHeight', get_theme_file_uri('/assets/js/jquery.matchHeight.js'), array(), '');
-
-    wp_enqueue_style('select2.min.css', 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css', array(), '');
-    wp_enqueue_script('select2.min.js', 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js', array(), '');
-
-
-    wp_enqueue_script('jquery.query-object', get_theme_file_uri('/assets/js/jquery.query-object.js'), array(), '');
-    wp_enqueue_script('lightgallery.min', get_theme_file_uri('/assets/js/lightgallery.min.js'), array(), '');
-    wp_enqueue_script('lg-fullscreen.min', get_theme_file_uri('/assets/js/lg-fullscreen.min.js'), array(), '');
-    wp_enqueue_script('lg-hash.min', get_theme_file_uri('/assets/js/lg-hash.min.js'), array(), '');
     wp_enqueue_script('jquery.inputmask', get_theme_file_uri('/assets/js/jquery.inputmask.js'), array(), '');
-    wp_enqueue_script('lg-thumbnail.min', get_theme_file_uri('/assets/js/lg-thumbnail.min.js'), array(), '');
+
+
+    wp_enqueue_script('lightbox', get_theme_file_uri('/assets/js/lightbox.min.js'), array(), '');
+
     wp_enqueue_script('default', get_theme_file_uri('/assets/js/default.js'), array(), '');
     if (is_page_template('page-contact.php')) {
 
@@ -725,7 +718,7 @@ function vc_certs_row_function($atts, $content)
 
         $html .= '<div class="item-cert-slider">
                         <div class="item-cert-slider-walp">
-                            <a href="'.wp_get_attachment_url(get_post_thumbnail_id($post_id), 'full').'">
+                            <a href="'.wp_get_attachment_url(get_post_thumbnail_id($post_id), 'full').'"  data-lightbox="roadtrip">
                                 <div class="img-overlay-sert">
                                     <img src=" '.get_theme_file_uri('/assets/images/zoom-in.png').'" alt="Иконка увеличения"  />
                                 </div>

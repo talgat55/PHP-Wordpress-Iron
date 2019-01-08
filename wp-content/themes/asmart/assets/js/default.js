@@ -11,15 +11,6 @@ jQuery(document).ready(function() {
     jQuery('.products li.product-item').matchHeight();
 
 
-    /*
-    * Select  for brend
-     */
-    jQuery('.brend, .razmer, .select2').select2({
-        minimumResultsForSearch: -1
-    });
-
-
-
 
 
     /*
@@ -413,7 +404,7 @@ function afterchable(){
     /*
     * Input telephone mask
      */
-    jQuery('.one-but-phone, #billing_phone').inputmask({"mask": "+7 (999) 999-9999"});
+    jQuery('.phone-iput').inputmask({"mask": "+7 (999) 999-9999"});
 
 
     if(jQuery(window).width() < 780){
