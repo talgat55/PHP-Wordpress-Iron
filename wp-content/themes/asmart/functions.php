@@ -40,39 +40,35 @@ add_image_size('partner_image', 300, 75, false);
 function th_scripts()
 {
     // Theme stylesheet.
-    wp_enqueue_style('bootstrapcdn', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', array(), '');
+    wp_enqueue_style('bootstrapcdn', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', array(), '');
     wp_enqueue_style('th-style', get_stylesheet_uri());
 
-    //wp_enqueue_style( 'normalize', get_theme_file_uri(  '/assets/css/normalize.css'),array(), '' );
-    //wp_enqueue_style( 'light-style-main', get_theme_file_uri(  '/assets/css/index.css'),array(), '' );
-    //wp_enqueue_style( 'font-awesome', get_theme_file_uri(  '/assets/css/font-awesome.min.css'),array(), '' );
 
-
+    wp_enqueue_style('lg-transitions', get_theme_file_uri('/assets/css/lg-transitions.css'), array(), '');
+    wp_enqueue_style('lightgallery', get_theme_file_uri('/assets/css/lightgallery.css'), array(), '');
     wp_enqueue_style('fontawesome-all', get_theme_file_uri('/assets/css/fontawesome-all.css'), array(), '');
     wp_enqueue_style('normalize', get_theme_file_uri('/assets/css/normalize.css'), array(), '');
     wp_enqueue_style('slick', get_theme_file_uri('/assets/css/slick.css'), array(), '');
-    wp_enqueue_style('lightbox.min.css', get_theme_file_uri('/assets/css/lightbox.min.css'), array(), '');
     wp_enqueue_style('slick-theme', get_theme_file_uri('/assets/css/slick-theme.css'), array(), '');
     wp_enqueue_style('main-style', get_theme_file_uri('/assets/css/style.css'), array(), '');
-    // wp_enqueue_style( 'owl.theme.default.min', get_theme_file_uri(  '/assets/css/owl.theme.default.min.css'),array(), '' );
-    // wp_enqueue_style( 'slick-theme', get_theme_file_uri(  '/assets/css/slick-theme.css'),array(), '' );
-    // wp_enqueue_style( 'slick', get_theme_file_uri(  '/assets/css/slick.css'),array(), '' );
-//	wp_enqueue_style( 'datepicker.min', get_theme_file_uri(  '/assets/css/datepicker.min.css'),array(), '' );
-    //  wp_enqueue_style( 'jquery.fancybox.min', get_theme_file_uri(  '/assets/css/jquery.fancybox.min.css'),array(), '' );
-    //  wp_enqueue_style( 'jquery-ui.min', get_theme_file_uri(  '/assets/css/jquery-ui.min.css'),array(), '' );
 
     wp_enqueue_script('jquery', get_theme_file_uri('/assets/js/jquery-3.2.1.min.js'), array(), '');
     wp_enqueue_script('slick.min', get_theme_file_uri('/assets/js/slick.min.js'), array(), '');
     wp_enqueue_script('jquery.matchHeight', get_theme_file_uri('/assets/js/jquery.matchHeight.js'), array(), '');
     wp_enqueue_script('jquery.inputmask', get_theme_file_uri('/assets/js/jquery.inputmask.js'), array(), '');
+    wp_enqueue_script('lightgallery.min', get_theme_file_uri('/assets/js/lightgallery.min.js'), array(), '');
+    wp_enqueue_script('lg-fullscreen.min', get_theme_file_uri('/assets/js/lg-fullscreen.min.js'), array(), '');
+    wp_enqueue_script('lg-thumbnail.min', get_theme_file_uri('/assets/js/lg-thumbnail.min.js'), array(), '');
+    wp_enqueue_script('lg-hash.min', get_theme_file_uri('/assets/js/lg-hash.min.js'), array(), '');
+    wp_enqueue_script('lg-zoom.min', get_theme_file_uri('/assets/js/lg-zoom.min.js'), array(), '');
+    wp_enqueue_script('jquery.nav', get_theme_file_uri('/assets/js/jquery.nav.js'), array(), '');
+
     if (is_front_page()) {
 
-        wp_enqueue_script('yandex-maps', '//api-maps.yandex.ru/2.1/?lang=ru_RU', array(), '');
-
+        wp_enqueue_script('yandex-maps', 'https://api-maps.yandex.ru/2.1/?lang=ru_RU', array(), '');
 
     }
 
-    wp_enqueue_script('lightbox', get_theme_file_uri('/assets/js/lightbox.min.js'), array(), '');
 
     wp_enqueue_script('default', get_theme_file_uri('/assets/js/default.js'), array(), '');
 
@@ -672,10 +668,10 @@ function vc_products_function($atts, $content)
     $html .= ' </ul>';
     $html .= '<div class="price--link-block">
 
-                <a href="' . get_field('file_price', 'option')['url'] . '" class="link-all-prices">
+                <a  target="_blank" href="' . get_field('file_price', 'option')['url'] . '" class="link-all-prices">
                     <div class="img"><img src="' . get_theme_file_uri('/assets/images/icon-pdf.png') . '"  alt=" картинка ссылка" /></div>
                     <p>
-                        Цены на товары
+                        Цены на все товары
                     </p>
                 </a>
               </div>';

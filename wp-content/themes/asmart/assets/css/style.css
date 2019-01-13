@@ -21,6 +21,14 @@
 html {
   overflow-y: inherit; }
 
+.basic-page {
+  line-height: 1.5;
+  margin-bottom: 40px; }
+
+.title-404 {
+  font-size: 60px;
+  font-family: "MyriadPro-Bold"; }
+
 .top-header {
   padding: 22px 0 28px 0; }
 
@@ -75,8 +83,7 @@ html {
   .top-main-container li:hover a {
     color: #ffc04e; }
   .top-main-container li.current-menu-item a {
-    font-family: "MyriadPro-Semibold";
-    color: #ffc04e; }
+    font-family: "MyriadPro-Semibold"; }
 
 header {
   padding-bottom: 30px; }
@@ -89,10 +96,10 @@ header {
   margin-bottom: 30px; }
 
 .item-home-slider {
-  -webkit-background-size: cover;
-          background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+  -webkit-background-size: cover !important;
+          background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
   height: 525px; }
 
 .home-slider {
@@ -122,7 +129,7 @@ header {
     display: table-cell;
     vertical-align: middle;
     position: relative;
-    left: 35px; }
+    left: 50px; }
 
 .content-home-slider {
   height: 100%; }
@@ -258,6 +265,9 @@ section.products-class {
     -webkit-border-bottom-right-radius: 31px;
             border-bottom-right-radius: 31px; }
 
+.home-slider-walpaper .slick-dotted.slick-slider {
+  margin-bottom: 25px; }
+
 .service-class h3 {
   font-family: "MyriadPro-Bold";
   font-size: 18px;
@@ -268,62 +278,59 @@ section.products-class {
 .service-class p {
   color: #2a2d2f; }
 
-.feedback-class input[type=text] {
-  background: #f6f6f6;
-  border: none;
-  display: block;
-  text-align: center;
-  padding: 10px;
-  -webkit-border-radius: 22px;
-          border-radius: 22px;
-  margin: 0 auto 30px auto;
-  font-family: "MyriadPro-Regular";
-  font-size: 15px;
-  line-height: 1.5;
-  color: #b2b2b2;
-  width: 300px; }
-
-.feedback-class ::-webkit-input-placeholder {
-  font-family: "MyriadPro-Regular";
-  font-size: 15px;
-  line-height: 1.5;
-  color: #b2b2b2; }
-
-.feedback-class ::-moz-placeholder {
-  font-family: "MyriadPro-Regular";
-  font-size: 15px;
-  line-height: 1.5;
-  color: #b2b2b2; }
-
-.feedback-class :-ms-input-placeholder {
-  font-family: "MyriadPro-Regular";
-  font-size: 15px;
-  line-height: 1.5;
-  color: #b2b2b2; }
-
-.feedback-class :-moz-placeholder {
-  font-family: "MyriadPro-Regular";
-  font-size: 15px;
-  line-height: 1.5;
-  color: #b2b2b2; }
-
-.feedback-class input[type=submit] {
-  background: -webkit-gradient(linear, left top, right top, from(#868585), color-stop(18%, #868585), to(#bdbdbc));
-  background: -webkit-linear-gradient(left, #868585 0%, #868585 18%, #bdbdbc 100%);
-  background: -o-linear-gradient(left, #868585 0%, #868585 18%, #bdbdbc 100%);
-  background: linear-gradient(to right, #868585 0%, #868585 18%, #bdbdbc 100%);
-  border: none;
-  font-size: 18px;
-  line-height: 1.5;
-  font-family: "MyriadPro-Regular";
-  color: #fff;
-  -webkit-border-radius: 25px;
-          border-radius: 25px;
-  margin: 0 auto 30px auto;
-  padding: 10px 86px;
-  display: table; }
-  .feedback-class input[type=submit]:hover {
-    background: #ffc04e; }
+.feedback-class {
+  margin-bottom: -21px; }
+  .feedback-class input[type=text] {
+    background: #f6f6f6;
+    border: none;
+    display: block;
+    text-align: center;
+    padding: 10px;
+    -webkit-border-radius: 22px;
+            border-radius: 22px;
+    margin: 0 auto 30px auto;
+    font-family: "MyriadPro-Regular";
+    font-size: 15px;
+    line-height: 1.5;
+    color: #b2b2b2;
+    width: 300px; }
+  .feedback-class ::-webkit-input-placeholder {
+    font-family: "MyriadPro-Regular";
+    font-size: 15px;
+    line-height: 1.5;
+    color: #b2b2b2; }
+  .feedback-class ::-moz-placeholder {
+    font-family: "MyriadPro-Regular";
+    font-size: 15px;
+    line-height: 1.5;
+    color: #b2b2b2; }
+  .feedback-class :-ms-input-placeholder {
+    font-family: "MyriadPro-Regular";
+    font-size: 15px;
+    line-height: 1.5;
+    color: #b2b2b2; }
+  .feedback-class :-moz-placeholder {
+    font-family: "MyriadPro-Regular";
+    font-size: 15px;
+    line-height: 1.5;
+    color: #b2b2b2; }
+  .feedback-class input[type=submit] {
+    background: -webkit-gradient(linear, left top, right top, from(#868585), color-stop(18%, #868585), to(#bdbdbc));
+    background: -webkit-linear-gradient(left, #868585 0%, #868585 18%, #bdbdbc 100%);
+    background: -o-linear-gradient(left, #868585 0%, #868585 18%, #bdbdbc 100%);
+    background: linear-gradient(to right, #868585 0%, #868585 18%, #bdbdbc 100%);
+    border: none;
+    font-size: 18px;
+    line-height: 1.5;
+    font-family: "MyriadPro-Regular";
+    color: #fff;
+    -webkit-border-radius: 25px;
+            border-radius: 25px;
+    margin: 0 auto 30px auto;
+    padding: 10px 86px;
+    display: table; }
+    .feedback-class input[type=submit]:hover {
+      background: #ffc04e; }
 
 .pre-form p {
   font-family: "MyriadPro-Regular";
