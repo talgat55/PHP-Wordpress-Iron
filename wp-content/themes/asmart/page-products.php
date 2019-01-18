@@ -1,6 +1,6 @@
 <?php
 /*
- * Template Name: Продукция
+ * Template Name: Products
  */
 
 get_header(); ?>
@@ -11,7 +11,7 @@ get_header(); ?>
                 <div class="container">
                     <div class="row">
                         <h1 class="page-title">
-                            продукция
+                            <?php  the_title(); ?>
                         </h1>
                     </div>
                 </div>
@@ -36,14 +36,19 @@ get_header(); ?>
                           <li class="product-cat-item col-lg-4 col-md-4 col-sm-12 col-xs-12">
                              <div class="row">
                                  <div class="product-cat-item-walp">
-                                     <a  href="<?= get_term_link($term->term_id, 'product_cats'); ?>" class="product-cat-item-holder">
-                                         <div class="img-block"><img src="<?=  $image; ?>"  alt="изображение категории"/></div>
+                                     <div class="product-cat-item-holder">
+                                         <div class="img-block">
+                                             <div class="overlay-img-product">
+                                                 <a href="#" class="link-price">Узнать цены</a>
+                                             </div>
+                                             <img src="<?=  $image; ?>"  alt="изображение категории"/>
+                                         </div>
 
                                          <h3>
                                              <?= $term->name; ?>
                                          </h3>
 
-                                     </a>
+                                     </div>
                                  </div>
                              </div>
                          </li>

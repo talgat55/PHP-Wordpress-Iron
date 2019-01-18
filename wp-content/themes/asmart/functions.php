@@ -40,7 +40,7 @@ add_image_size('partner_image', 300, 75, false);
 function th_scripts()
 {
     // Theme stylesheet.
-    wp_enqueue_style('bootstrapcdn', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', array(), '');
+    wp_enqueue_style('bootstrapcdn', get_theme_file_uri('/assets/css/bootstrap.min.css'), array(), '');
     wp_enqueue_style('th-style', get_stylesheet_uri());
 
 
