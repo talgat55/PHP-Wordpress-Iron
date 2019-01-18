@@ -18,6 +18,16 @@
   margin-bottom: 20px !important;
   margin-top: 30px; }
 
+h1.page-title {
+  font-family: "MyriadPro-Bold";
+  font-size: 24px;
+  line-height: 1.5;
+  color: #fff;
+  padding: 36px;
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase; }
+
 html {
   overflow-y: inherit; }
 
@@ -28,6 +38,25 @@ html {
 .title-404 {
   font-size: 60px;
   font-family: "MyriadPro-Bold"; }
+
+#back_to_top {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  bottom: 65px;
+  right: 30px;
+  padding: 9px 18px;
+  color: #fff;
+  z-index: 9999;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+  #back_to_top:hover {
+    opacity: 0.5 !important; }
+
+.backactive {
+  opacity: 1 !important;
+  visibility: visible !important; }
 
 .top-header {
   padding: 22px 0 28px 0; }
@@ -87,6 +116,13 @@ html {
 
 header {
   padding-bottom: 30px; }
+
+.bredscrumb {
+  background: url(../images/bred.png);
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  -webkit-background-size: cover !important;
+          background-size: cover !important; }
 
 .feature-class h3 {
   font-family: "MyriadPro-Regular";
@@ -561,6 +597,12 @@ section.sertificate-class {
 
 .span.wpcf7-not-valid-tip {
   text-align: center; }
+
+.page-products .products-cats {
+  padding-top: 50px; }
+
+.page-products .price--link-block {
+  margin-bottom: 75px; }
 
 .footer-policy-link {
   font-family: "MyriadPro-Regular";

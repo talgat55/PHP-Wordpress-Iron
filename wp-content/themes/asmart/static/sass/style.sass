@@ -22,6 +22,18 @@ $color_grey: #706f6f
   color: #333333
   margin-bottom: 20px!important
   margin-top: 30px
+
+h1.page-title
+  font-family: $font_bold
+  font-size: 24px
+  line-height: 1.5
+  color: #fff
+  padding: 36px
+  margin: 0
+  text-align: center
+  text-transform: uppercase
+
+
 html
   overflow-y: inherit
 .basic-page
@@ -31,6 +43,29 @@ html
 .title-404
   font-size: 60px
   font-family: $font_bold
+
+#back_to_top
+  opacity: 0
+  visibility: hidden
+  position: fixed
+  bottom: 65px
+  right: 30px
+  padding: 9px 18px
+  color: #fff
+  z-index: 9999
+  -webkit-transition: all 0.3s ease-in-out
+  -moz-transition: all 0.3s ease-in-out
+  -o-transition: all 0.3s ease-in-out
+  -ms-transition: all 0.3s ease-in-out
+  transition: all 0.3s ease-in-out
+  &:hover
+    opacity: .5!important
+
+.backactive
+  opacity: 1!important
+  visibility: visible!important
+
+
 
 @import "header.sass"
 @import "main.sass"

@@ -29,6 +29,8 @@
 </div><!-- .site-content-contain -->
 </div><!-- #page -->
 <?php wp_footer(); ?>
-
+<a id="back_to_top" href="#">
+			<img src="<?php echo get_theme_file_uri('/assets/images/arr-up.png') ?>"   alt="Стрелка" />
+</a>
 </body>
 </html>
