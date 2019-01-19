@@ -22,6 +22,20 @@
         var myajax = {"url":"<?=admin_url('admin-ajax.php'); ?>"};
         /* ]]> */
     </script>
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "Organization",
+            "address": {
+                "@type": "PostalAddress",
+                "addressRegion": "г. Омск",
+                "streetAddress": " ул. Нефтезаводская, 47"
+            },
+            "description": "Металл+ описание",
+            "name": "Металл+",
+            "telephone": " +7 (3812) 62-78-16"
+        }
+    </script>
 </head>
 
 <body <?php body_class(); ?>>
