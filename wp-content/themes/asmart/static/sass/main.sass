@@ -519,3 +519,112 @@ section.sertificate-class
         a:hover
           color: $color_yellow
           border-color: $color_yellow
+//
+//  Price list
+//
+.price-lists
+  margin: 0
+  padding: 22px 0 40px
+  overflow: hidden
+  li
+    list-style: none
+    .price-item-walp
+      display: table
+      padding: 8px 20px
+      border: 1px solid #cdcdcd
+      border-radius: 40px
+      width: 325px
+      height: 70px
+      margin-bottom: 20px
+      text-decoration: none
+
+    .image-price
+      display: table-cell
+      width: 68px
+      vertical-align: middle
+      .price-img-hover
+        display: none
+
+    h3
+      display: table-cell
+      vertical-align: middle
+      text-align: center
+      white-space: nowrap
+      font-family: $font_regular
+      font-size: 20px
+      color: #4e4e4e
+    .price-item-walp:hover
+      background: $color_yellow2
+      border-color: $color_yellow2
+      .price-img
+        display: none
+      .price-img-hover
+        display: block
+      h3
+        color: #fff
+a.price-item-walp.active
+  background: $color_yellow2
+  border-color: $color_yellow2
+  .price-img
+    display: none
+  .price-img-hover
+    display: block
+  h3
+    color: #fff
+
+.table-price
+  width: 90%
+  margin: 0 auto
+  border-top-left-radius: 10px
+  overflow: hidden
+  border-top-right-radius: 10px
+  table
+    width: 100%
+
+    thead
+      background: $color_yellow2
+      border: 1px solid #fff
+      td
+        width: 25%
+        text-align: center
+        font-family: $font_regular
+        color: #fff
+        padding: 10px
+    th
+      border: 1px solid #d2d2d2
+      font-family: $font_regular
+      color: #4e4e4e
+      font-size: 16px
+      padding: 11px 13px
+      font-weight: 400
+      text-align: center
+
+.page-prices
+  .link-all-prices
+    img
+      padding: 8px 0 8px 13px
+    p
+      padding-right: 55px
+  .slick-dots
+    bottom: -61px
+    left: 68px
+    button
+      background: #ababab
+
+.action-item
+  img
+    width: 100%
+
+.action-row
+  position: relative
+  margin: 70px 0 142px
+  .action-arrow
+    position: absolute
+    left: 50%
+    transform: translateX(-50%)
+    bottom: -40px
+    width: 41px
+
+
+
+

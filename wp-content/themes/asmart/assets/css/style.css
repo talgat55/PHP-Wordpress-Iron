@@ -645,6 +645,111 @@ section.sertificate-class {
       color: #ffc04e;
       border-color: #ffc04e; }
 
+.price-lists {
+  margin: 0;
+  padding: 22px 0 40px;
+  overflow: hidden; }
+  .price-lists li {
+    list-style: none; }
+    .price-lists li .price-item-walp {
+      display: table;
+      padding: 8px 20px;
+      border: 1px solid #cdcdcd;
+      -webkit-border-radius: 40px;
+              border-radius: 40px;
+      width: 325px;
+      height: 70px;
+      margin-bottom: 20px;
+      text-decoration: none; }
+    .price-lists li .image-price {
+      display: table-cell;
+      width: 68px;
+      vertical-align: middle; }
+      .price-lists li .image-price .price-img-hover {
+        display: none; }
+    .price-lists li h3 {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+      white-space: nowrap;
+      font-family: "MyriadPro-Regular";
+      font-size: 20px;
+      color: #4e4e4e; }
+    .price-lists li .price-item-walp:hover {
+      background: #ccb080;
+      border-color: #ccb080; }
+      .price-lists li .price-item-walp:hover .price-img {
+        display: none; }
+      .price-lists li .price-item-walp:hover .price-img-hover {
+        display: block; }
+      .price-lists li .price-item-walp:hover h3 {
+        color: #fff; }
+
+a.price-item-walp.active {
+  background: #ccb080;
+  border-color: #ccb080; }
+  a.price-item-walp.active .price-img {
+    display: none; }
+  a.price-item-walp.active .price-img-hover {
+    display: block; }
+  a.price-item-walp.active h3 {
+    color: #fff; }
+
+.table-price {
+  width: 90%;
+  margin: 0 auto;
+  -webkit-border-top-left-radius: 10px;
+          border-top-left-radius: 10px;
+  overflow: hidden;
+  -webkit-border-top-right-radius: 10px;
+          border-top-right-radius: 10px; }
+  .table-price table {
+    width: 100%; }
+    .table-price table thead {
+      background: #ccb080;
+      border: 1px solid #fff; }
+      .table-price table thead td {
+        width: 25%;
+        text-align: center;
+        font-family: "MyriadPro-Regular";
+        color: #fff;
+        padding: 10px; }
+    .table-price table th {
+      border: 1px solid #d2d2d2;
+      font-family: "MyriadPro-Regular";
+      color: #4e4e4e;
+      font-size: 16px;
+      padding: 11px 13px;
+      font-weight: 400;
+      text-align: center; }
+
+.page-prices .link-all-prices img {
+  padding: 8px 0 8px 13px; }
+
+.page-prices .link-all-prices p {
+  padding-right: 55px; }
+
+.page-prices .slick-dots {
+  bottom: -61px;
+  left: 68px; }
+  .page-prices .slick-dots button {
+    background: #ababab; }
+
+.action-item img {
+  width: 100%; }
+
+.action-row {
+  position: relative;
+  margin: 70px 0 142px; }
+  .action-row .action-arrow {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+    bottom: -40px;
+    width: 41px; }
+
 .footer-policy-link {
   font-family: "MyriadPro-Regular";
   font-size: 18px;

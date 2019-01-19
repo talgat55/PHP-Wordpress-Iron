@@ -17,6 +17,11 @@
           type="image/x-icon"/>
 
     <?php wp_head(); ?>
+    <script type='text/javascript'>
+        /* <![CDATA[ */
+        var myajax = {"url":"<?=admin_url('admin-ajax.php'); ?>"};
+        /* ]]> */
+    </script>
 </head>
 
 <body <?php body_class(); ?>>
