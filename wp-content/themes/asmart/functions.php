@@ -63,7 +63,7 @@ function th_scripts()
     wp_enqueue_script('lg-zoom.min', get_theme_file_uri('/assets/js/lg-zoom.min.js'), array(), '');
     wp_enqueue_script('jquery.nav', get_theme_file_uri('/assets/js/jquery.nav.js'), array(), '');
 
-    if (is_front_page()) {
+    if (is_front_page() || is_page_template('page-contact.php')) {
 
         wp_enqueue_script('yandex-maps', 'https://api-maps.yandex.ru/2.1/?lang=ru_RU', array(), '');
 
