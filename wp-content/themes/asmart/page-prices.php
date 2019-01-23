@@ -39,7 +39,7 @@ get_header(); ?>
                             $image_hover = get_field('image_hover', $post_id);
 
                             ?>
-                            <li class="price-item col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <li class="price-item col-lg-4 col-md-4 col-sm-6 col-xs-12">
                                 <a href="#" class="price-item-walp  <?php   if($i == '0'){ echo 'active'; }  ?> "  data-type="<?= $type; ?>">
                                   <div class="image-price">
                                       <img  class="price-img" src="<?= $image; ?>" alt="Картинка">

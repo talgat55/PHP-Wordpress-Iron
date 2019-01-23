@@ -13,7 +13,7 @@
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
     <link rel="profile" href="http://gmpg.org/xfn/11">
-    <link rel="shortcut icon" href="<?php echo get_theme_file_uri('/assets/images/favicon.ico') ?>"
+    <link rel="shortcut icon" href="<?php echo get_theme_file_uri('/assets/images/favicon.png') ?>"
           type="image/x-icon"/>
 
     <?php wp_head(); ?>

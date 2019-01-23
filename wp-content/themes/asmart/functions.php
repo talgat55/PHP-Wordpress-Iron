@@ -415,7 +415,7 @@ function vc_products_function($atts, $content)
         $url = get_field('thumbnails', $term);
 
         $image = $url["sizes"]["category_products"];
-        $html .= '<li   class="product-cat-item col-lg-4 col-md-4 col-sm-12 col-xs-12">
+        $html .= '<li   class="product-cat-item col-lg-4 col-md-4 col-sm-6 col-xs-12">
                     <div class="row">
                     <div class="product-cat-item-walp">
                         <a  href="' . get_term_link($term->term_id, 'product_cats') . '" class="product-cat-item-holder">
@@ -514,7 +514,7 @@ function vc_mapyandex_function($atts, $content)
                 <div class="map-content">
                     <div class="container">
                         <div class="row">
-                            <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                            <div class="relative col-lg-5 col-md-5 col-sm-12 col-xs-12">
                                 <div class="map-content-firstblock">
                                     <img class="image-contact" src="' . get_theme_file_uri('/assets/images/contact-form.png') . '" alt="изображение формы" />
                                             <h3>

@@ -366,11 +366,20 @@ section.sertificate-class
       margin-top: 68px
       margin-left: 32px
       display: inline-block
+      position: absolute
+      top: 0
+      z-index: 6
+    .wpcf7-not-valid-tip
+        text-align: center
+    .ajax-loader
+      bottom: 60px
+      margin-left: -10px
+      left: 50%
     .image-contact
       width: 170px
       position: absolute
-      top: 0
-      left: 0
+      top: -64px
+      left: -45px
       z-index: 2
 
 
@@ -449,6 +458,8 @@ section.sertificate-class
   width: 440px
   margin-top: 25px
   border-radius: 10px
+  position: absolute
+  top: 455px
   h3
     text-align: center
     color: #333333
@@ -650,6 +661,171 @@ a.price-item-walp.active
   .map-content-secondblock
     margin-top: 0
     border: 1.5px solid #ccb080
+    top: 416px
   .map-content-firstblock
-    margin-top: 30px
+    margin-top: 0
     border: 1.5px solid #ccb080
+    display: inline-block
+    z-index: 20
+    position: relative
+    width: 440px
+    .wpcf7-not-valid-tip
+      text-align: center
+    div.wpcf7 .ajax-loader
+      left: 50%
+      bottom: 63px!important
+      margin-left: -13px
+
+
+@media (max-width: 1200px)
+  .top-main-container li
+    display: inline-block
+    padding-right: 29px
+
+  .bottom-main-container li
+    display: inline-block
+    padding-right: 3px
+
+@media (max-width: 1000px)
+  .main-row-contact .map-content-secondblock
+    position: relative
+    top: 0!important
+    margin: 0 auto
+    display: table
+
+
+  .main-row-contact .map-content-firstblock
+    margin: 20px auto
+    display: table
+
+  a.logo
+    text-align: center
+    display: table
+    margin: 0 auto
+  .bottom-header
+    .top-main-container
+      display: none
+  #responsive-menu-button
+    position: absolute!important
+    left: 107px!important
+    top: 193px!important
+    background: transparent!important
+  .responsive-menu-inner, .responsive-menu-inner::before, .responsive-menu-inner::after
+    background-color: $color_yellow!important
+  .row-top-header
+    .link-phone
+      line-height: 35px
+    .col-lg-6 .col-lg-6:first-child .link-phone
+      margin-top: 16px
+      display: inline-block
+  .top-header
+    padding-bottom: 0
+
+  .slider-block-content-walpaper
+    width: 100%
+  .product-cat-item-walp
+    width: 100%
+    padding: 0 10px!important
+  a.logo-footer
+    display: table
+    margin: 0 auto
+
+  .footer-policy-link
+    text-align: center
+  .bottom-main-container
+    text-align: center!important
+    li
+      display: inline-block
+      padding-right: 9px
+  .footer-text-copyright
+    text-align: center!important
+
+@media (max-width: 768px)
+  .btn-link.call-button
+    margin-right: 15px
+  #responsive-menu-button
+    left: 16px !important
+  section.onas-class
+    padding: 0 15px
+  .products-cats li
+    list-style: none
+    width: 50%
+    display: table
+    float: none
+    margin: 0 auto
+
+  .map-holder, #map
+    height: 330px!important
+  .map-holder .map-content
+    position: relative!important
+  .map-content-firstblock,
+  .map-content-secondblock
+    position: relative!important
+    display: table!important
+    margin: 20px auto!important
+    top: 0!important
+  .map-content-firstblock
+    margin-top: 104px!important
+  .map-content-secondblock
+    margin-bottom: 40px!important
+
+  .item-cert-slider-walp
+    margin-left: 20px
+    margin-right: 20px
+    box-shadow: none!important
+
+  .item-cert-slider-walp img
+    max-width: 100%
+    display: table
+    margin: 0 auto
+  .price-lists li .price-item-walp
+    margin-left: auto
+    margin-right: auto
+
+  .main-row-contact .map-content-firstblock
+    margin-top: 10px!important
+  .bottom-main-container li
+    display: block!important
+    padding-right: 0!important
+
+
+@media (max-width: 600px)
+  .slider-block-content-walpaper h2
+    font-size: 24px
+  .products-cats li
+    width: 100%
+  .image-contact
+    display: none
+  .map-content-firstblock,
+  .map-content-secondblock
+    display: block!important
+  .main-row-contact .map-content-firstblock,
+  .map-content-secondblock
+    width: 100%
+
+  .bottom-main-container li
+    display: block!important
+    padding-right: 0!important
+
+  .map-content input[type=text]
+    width: auto
+
+  .custom-modal
+    width: 100%
+    z-index: 999909
+    .modal-img
+      position: absolute
+    .modal-contents
+      display: block
+      width: 100%
+      z-index: 3
+      position: relative
+    .close-modal
+      top: -18px
+      right: 30px
+  .price-lists li .price-item-walp
+    width: 100%
+
+  .table-price table th
+    font-size: 13px
+    padding: 4px 4px

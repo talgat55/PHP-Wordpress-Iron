@@ -32,5 +32,15 @@
 <a id="back_to_top" href="#">
 			<img src="<?php echo get_theme_file_uri('/assets/images/arr-up.png') ?>"   alt="Стрелка" />
 </a>
+
+<div class="custom-modal">
+    <img class="modal-img"   src="<?php echo get_theme_file_uri('/assets/images/modal-img.png') ?>"   alt="иконка" />
+    <div class="modal-contents">
+        <img class="close-modal" src="<?php echo get_theme_file_uri('/assets/images/close-modal.png') ?>"   alt="иконка" />
+        <h3>Оставьте заявку</h3>
+        <?= do_shortcode('[contact-form-7 id="158" title="Модальное окно"]'); ?>
+    </div>
+</div>
+<div class="overlya-modal-layer"></div>
 </body>
 </html>

@@ -24,8 +24,35 @@ jQuery(document).ready(function() {
     ActionSlider();
     backToTop();
     Ajaxprice();
+    Modal();
 // end redy funvtion
 });
+
+/*
+* show modal
+*/
+function Modal() {
+
+
+    jQuery('body').on('click', '.btn-link.call-button', function () {
+
+      jQuery('.custom-modal').addClass('show-blocks-modal');
+      jQuery('.overlya-modal-layer').addClass('show-blocks-modal');
+
+        return false;
+
+    });
+
+    jQuery('body').on('click', '.overlya-modal-layer, .close-modal ', function () {
+        jQuery('.custom-modal').removeClass('show-blocks-modal');
+        jQuery('.overlya-modal-layer').removeClass('show-blocks-modal');
+
+
+        return false;
+
+    });
+}
+
 
 /*
 * Ajax
@@ -71,14 +98,9 @@ function Ajaxprice() {
 
 
 
-
-
-
-
-
-/*
-* Slider action
-*/
+// ---------------------------------------------------------
+//  Slider action
+// ---------------------------------------------------------
 function ActionSlider() {
 
 
@@ -185,7 +207,19 @@ function CertCarousel() {
         slidesToScroll: 3,
         dots: true,
         autoplay: true,
-        arrows: false
+        arrows: false,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+            // You can unslick at a given breakpoint now by adding:
+            // settings: "unslick"
+            // instead of a settings object
+        ]
 
     });
 }
