@@ -55,7 +55,7 @@ function th_scripts()
     wp_enqueue_script('jquery', get_theme_file_uri('/assets/js/jquery-3.2.1.min.js'), array(), '');
     wp_enqueue_script('slick.min', get_theme_file_uri('/assets/js/slick.min.js'), array(), '');
     wp_enqueue_script('jquery.matchHeight', get_theme_file_uri('/assets/js/jquery.matchHeight.js'), array(), '');
-    wp_enqueue_script('jquery.inputmask', get_theme_file_uri('/assets/js/jquery.inputmask.js'), array(), '');
+    wp_enqueue_script('jquery.inputmask', 'https://rawgit.com/RobinHerbots/jquery.inputmask/3.x/dist/jquery.inputmask.bundle.js', array(), '');
     wp_enqueue_script('lightgallery.min', get_theme_file_uri('/assets/js/lightgallery.min.js'), array(), '');
     wp_enqueue_script('lg-fullscreen.min', get_theme_file_uri('/assets/js/lg-fullscreen.min.js'), array(), '');
     wp_enqueue_script('lg-thumbnail.min', get_theme_file_uri('/assets/js/lg-thumbnail.min.js'), array(), '');
@@ -164,6 +164,34 @@ function post_type_certs()
         )
     );
     register_post_type('certs', $args);
+}
+/*
+*  Rgister Post Type Products
+*/
+
+add_action('init', 'post_type_action');
+
+function post_type_action()
+{
+    $labels = array(
+        'name' => 'Акции',
+        'singular_name' => 'Акции',
+        'all_items' => 'Акции',
+        'menu_name' => 'Акции' // ссылка в меню в админке
+    );
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'menu_position' => 5,
+        'has_archive' => true,
+        'query_var' => "actions",
+        'supports' => array(
+            'title',
+            'editor',
+            'thumbnail'
+        )
+    );
+    register_post_type('actions', $args);
 }
 
 /*
@@ -418,7 +446,7 @@ function vc_products_function($atts, $content)
         $html .= '<li   class="product-cat-item col-lg-4 col-md-4 col-sm-6 col-xs-12">
                     <div class="row">
                     <div class="product-cat-item-walp">
-                        <a  href="' . get_term_link($term->term_id, 'product_cats') . '" class="product-cat-item-holder">
+                        <a  href="/prices?id='.$term->term_id.'" class="product-cat-item-holder">
                                 <div class="img-block"><img src="' . $image . '"  alt="изображение категории"/></div>
                                 
                                 <h3>

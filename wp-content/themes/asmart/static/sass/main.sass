@@ -635,6 +635,48 @@ a.price-item-walp.active
 .action-item
   img
     width: 100%
+  .img-block
+    height: 130px
+    width: 450px
+    background-size: cover!important
+    background-position: center center!important
+  .text-value
+    font-family: $font_regular
+    font-size: 30px
+    line-height: 1.5
+    color: #333
+    text-align: center
+    position: relative
+  .text-value::after
+    content: ''
+    width: 0
+    height: 0
+    border-bottom: 147px solid #efefef
+    border-right: 100px solid transparent
+    position: absolute
+    top: -7px
+    right: -97px
+    display: block
+    z-index: 2
+  .value-price
+    font-size: 90px
+    line-height: 1.5
+    padding-left: 52px
+    width: 215px
+    font-family: $font_bold
+    color: red
+.action-block
+  display: table
+  position: relative
+  width: 100%
+  background: #efefef
+  border-radius: 88px
+  overflow: hidden
+  >div
+    display: table-cell
+    vertical-align: middle
+
+
 
 .action-row
   position: relative
@@ -692,7 +734,8 @@ a.price-item-walp.active
     top: 0!important
     margin: 0 auto
     display: table
-
+  .action-item .img-block
+    width: 180px
 
   .main-row-contact .map-content-firstblock
     margin: 20px auto
@@ -787,13 +830,18 @@ a.price-item-walp.active
   .bottom-main-container li
     display: block!important
     padding-right: 0!important
+  .action-item .img-block
+    display: none
 
+  .action-item .text-value
+    padding-right: 30px
 
 @media (max-width: 600px)
   .slider-block-content-walpaper h2
     font-size: 24px
   .products-cats li
     width: 100%
+  .link-all-prices .img,
   .image-contact
     display: none
   .map-content-firstblock,
@@ -829,3 +877,62 @@ a.price-item-walp.active
   .table-price table th
     font-size: 13px
     padding: 4px 4px
+
+  .map-content input[type=text]
+    margin: 10px auto
+  .map-content .text-policy
+    width: 100%
+
+  .link-all-prices p
+    border-radius: 29px
+    padding: 12px 20px
+
+  .vc_column-inner.vc_custom_1546923298050
+    padding-left: 15px!important
+
+  .map-content-firstblock
+    margin-top: 28px !important
+  .map-content-firstblock h3,
+  .map-content .text-policy
+    padding: 0 5px
+  .map-content-firstblock h3
+    margin-top: 0!important
+  .page-template-page-contact .map-content-firstblock h3
+    margin-top: 30px!important
+  .map-holder .map-content .map-content-firstblock
+    padding-top: 15px
+  .vc_row.wpb_row.vc_row-fluid.feedback-class.vc_custom_1546921639319.vc_row-has-fill
+    background: transparent!important
+
+
+  .pre-form p
+    margin-top: 0!important
+
+  .vc_column-inner.vc_custom_1546923298050
+    padding-top: 0!important
+
+
+  .responsive-menu-open button#responsive-menu-button
+    background: #000000
+    position: fixed!important
+    top: 40px!important
+    left: 187px!important
+
+  .slider-block-content-walpaper h2
+    left: 0!important
+    padding: 20px
+
+
+  .action-block > div
+    display: block
+    text-align: center
+    .value-price
+      width: 100%
+      padding: 0
+
+  .action-block
+    border-radius: 0
+    padding: 0 15px
+
+    .text-value
+      padding: 0

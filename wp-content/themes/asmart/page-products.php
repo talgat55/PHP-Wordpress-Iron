@@ -39,7 +39,7 @@ get_header(); ?>
                                      <div class="product-cat-item-holder">
                                          <div class="img-block">
                                              <div class="overlay-img-product">
-                                                 <a href="#" class="link-price">Узнать цены</a>
+                                                 <a   href="/prices?id=<?=$term->term_id; ?>" class="link-price">Узнать цены</a>
                                              </div>
                                              <img src="<?=  $image; ?>"  alt="изображение категории"/>
                                          </div>

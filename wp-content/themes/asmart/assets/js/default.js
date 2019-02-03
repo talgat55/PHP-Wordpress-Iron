@@ -13,8 +13,8 @@ jQuery(document).ready(function() {
     /*
     * Input telephone mask
      */
-    jQuery('.phone-iput').inputmask({"mask": "+7 (999) 999-9999"});
 
+    jQuery('.phone-iput').inputmask("(999) 999-9999");
 
     HomeSlider();
     CertCarousel();
@@ -109,7 +109,7 @@ function ActionSlider() {
         slidesToShow: 1,
         slidesToScroll: 1,
         dots: true,
-        autoplay: true,
+      //  autoplay: true,
         prevArrow: jQuery('.action-arrow .nav-link.right'),
         nextArrow: jQuery('.action-arrow .nav-link.left')
 

@@ -38,9 +38,24 @@ get_header(); ?>
                             $image = get_field('image', $post_id);
                             $image_hover = get_field('image_hover', $post_id);
 
+                            if(!isset($_REQUEST['id'])){
+                                if($i == '0'){
+                                    $class= 'active';
+                                }else{
+                                    $class = '';
+                                }
+                            }else{
+                                if($_REQUEST['id'] ==$type ){
+                                    $class= 'active';
+                                }else{
+                                    $class = '';
+                                }
+
+                            }
+
                             ?>
                             <li class="price-item col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                                <a href="#" class="price-item-walp  <?php   if($i == '0'){ echo 'active'; }  ?> "  data-type="<?= $type; ?>">
+                                <a href="#" class="price-item-walp  <?= $class;     ?> "  data-type="<?= $type; ?>">
                                   <div class="image-price">
                                       <img  class="price-img" src="<?= $image; ?>" alt="Картинка">
                                       <img  class="price-img-hover" src="<?= $image_hover; ?>" alt="Картинка">
@@ -68,6 +83,13 @@ get_header(); ?>
                             'post_type' => 'price_cat',
                             'status' => 'publish'
                         );
+                        if(isset($_REQUEST['id'])){
+
+                            $arg[ 'meta_key'] =  'type_product';
+                            $arg[ 'meta_value'] = $_REQUEST['id'];
+                            $arg[ 'meta_compare'] = '==';
+                        }
+
                         $the_query = new WP_Query($arg);
 
                         while ($the_query->have_posts()) :
@@ -103,15 +125,40 @@ get_header(); ?>
 
                     <div class="action-row">
                         <div class="list-actions">
-                            <div class="action-item">
-                                <img src="<?= get_theme_file_uri('/assets/images/action.png') ; ?>"  alt="слайд" />
-                            </div>
-                            <div class="action-item">
-                                <img src="<?= get_theme_file_uri('/assets/images/action.png') ; ?>"  alt="слайд" />
-                            </div>
-                            <div class="action-item">
-                                <img src="<?= get_theme_file_uri('/assets/images/action.png') ; ?>"  alt="слайд" />
-                            </div>
+                            <?php
+                            $arg = array(
+                                'posts_per_page' => -1,
+                                'post_type' => 'actions',
+                                'status' => 'publish'
+                            );
+
+                            $the_query = new WP_Query($arg);
+
+                            while ($the_query->have_posts()) :
+                                $the_query->the_post();
+                                $post_id = $the_query->post->ID;
+
+                                $val    = get_field('act_value_action');
+                                $text   = get_field('act_text');
+                                $img    = get_field('act_image');
+                             ?>
+                                <div class="action-item">
+                                    <div class="action-block">
+                                        <div class="value-price">
+                                            <?= $val; ?>
+                                        </div>
+                                        <div class="text-value">
+                                            <?= $text; ?>
+                                        </div>
+                                        <div class="img-block" style="background: url(<?= $img; ?>) no-repeat!important;">
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php
+                            endwhile;
+                            ?>
+
+
 
                         </div>
                         <div class="action-arrow">

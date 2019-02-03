@@ -2,13 +2,10 @@
 <html <?php language_attributes(); ?>>
 <head>
     <title>
-        <?php
-        if (is_home()) {
-            bloginfo('name');
-        } else {
-            wp_title('');
-        }
-        ?>
+        <?php wp_title(''); ?><?php if (wp_title('', false)) {
+            echo ' | ';
+        } ?><?php bloginfo('name'); ?>
+
     </title>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
