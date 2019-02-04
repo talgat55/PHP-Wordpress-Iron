@@ -163,6 +163,8 @@ section.products-class
 .link-all-prices
   display: table
   margin: 0 auto
+  transition: all 0.3s ease
+
 
   .img
     float: left
@@ -184,6 +186,12 @@ section.products-class
     padding-right: 23px
     border-top-right-radius: 31px
     border-bottom-right-radius: 31px
+
+
+.link-all-prices:hover
+  opacity: .5
+
+
 
 .home-slider-walpaper .slick-dotted.slick-slider
   margin-bottom: 25px
@@ -687,7 +695,8 @@ a.price-item-walp.active
     transform: translateX(-50%)
     bottom: -40px
     width: 41px
-
+    .nav-link:hover
+      opacity: .5
 
 .main-row-contact
   margin: 50px 0

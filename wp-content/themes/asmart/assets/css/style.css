@@ -399,7 +399,10 @@ section.products-class {
 
 .link-all-prices {
   display: table;
-  margin: 0 auto; }
+  margin: 0 auto;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
   .link-all-prices .img {
     float: left;
     background: #9d9d9c;
@@ -426,6 +429,9 @@ section.products-class {
             border-top-right-radius: 31px;
     -webkit-border-bottom-right-radius: 31px;
             border-bottom-right-radius: 31px; }
+
+.link-all-prices:hover {
+  opacity: .5; }
 
 .home-slider-walpaper .slick-dotted.slick-slider {
   margin-bottom: 25px; }
@@ -943,6 +949,8 @@ a.price-item-walp.active {
             transform: translateX(-50%);
     bottom: -40px;
     width: 41px; }
+    .action-row .action-arrow .nav-link:hover {
+      opacity: .5; }
 
 .main-row-contact {
   margin: 50px 0; }
