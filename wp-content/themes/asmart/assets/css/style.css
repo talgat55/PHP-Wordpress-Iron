@@ -1170,7 +1170,19 @@ a.price-item-walp.active {
             border-radius: 0;
     padding: 0 15px; }
     .action-block .text-value {
-      padding: 0; } }
+      padding: 0; }
+  .vc_row.wpb_row.vc_row-fluid.feedback-class.vc_custom_1549251730782.vc_row-has-fill {
+    background: transparent !important; }
+  .page-prices .link-all-prices p {
+    padding: 10px 20px; }
+  .table-price {
+    width: 95%; }
+  .table-price table th {
+    font-size: 13px;
+    padding: 1px 1px; }
+  .action-item .value-price {
+    width: 100%;
+    padding-left: 0; } }
 
 .footer-policy-link {
   font-family: "MyriadPro-Regular";
