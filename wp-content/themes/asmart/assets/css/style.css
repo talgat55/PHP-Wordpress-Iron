@@ -1154,7 +1154,7 @@ a.price-item-walp.active {
   .responsive-menu-open button#responsive-menu-button {
     background: #000000;
     position: fixed !important;
-    top: 40px !important;
+    top: -8px !important;
     left: 187px !important; }
   .slider-block-content-walpaper h2 {
     left: 0 !important;

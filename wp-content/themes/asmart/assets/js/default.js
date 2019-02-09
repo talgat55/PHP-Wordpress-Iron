@@ -1,7 +1,16 @@
 // ---------------------------------------------------------
 // !!!!!!!!!!!!!!!!!document ready!!!!!!!!!!!!!!!!!!!!!!!!!!
 // ---------------------------------------------------------
+document.addEventListener('wpcf7mailsent', function(event) {
 
+    setTimeout(function(){
+        jQuery('.custom-modal, .overlya-modal-layer').removeClass('show-blocks-modal');
+
+
+    },2000);
+
+
+}, false);
 jQuery(document).ready(function() {
     "use strict";
 
@@ -25,8 +34,32 @@ jQuery(document).ready(function() {
     backToTop();
     Ajaxprice();
     Modal();
+    MobileLInks();
 // end redy funvtion
 });
+
+/*
+*   hide   in mobile for internal links
+*/
+function MobileLInks() {
+
+
+    if ( window.location.pathname == '/'  && jQuery(window).width()  < 1000 ){
+
+
+
+
+
+        jQuery('body').on('click', 'a[href*="/#"]', function () {
+
+            jQuery('#responsive-menu-button').trigger('click');
+
+        });
+
+
+
+    }
+}
 
 /*
 * show modal
