@@ -114,7 +114,7 @@ function Ajaxprice() {
                     jQuery('.table-price tbody').html(' ');
                     jQuery('.table-price tbody').append(res.data);
 
-
+                    jQuery("html, body").animate({ scrollTop: jQuery('.table-price').offset().top }, 1000);
                 } else {
 
                     console.log(res);
