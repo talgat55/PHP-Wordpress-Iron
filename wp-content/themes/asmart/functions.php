@@ -108,6 +108,35 @@ function post_type_price_cat()
 
 
 /*
+*  Rgister Post Type Partners
+*/
+
+add_action('init', 'post_type_partners');
+
+function post_type_partners()
+{
+    $labels = array(
+        'name' => 'Партнеры',
+        'singular_name' => 'Партнеры',
+        'all_items' => 'Партнеры',
+        'menu_name' => 'Партнеры' // ссылка в меню в админке
+    );
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'menu_position' => 5,
+        'has_archive' => true,
+        'query_var' => "partners",
+        'supports' => array(
+            'title',
+            'editor',
+            'thumbnail'
+        )
+    );
+    register_post_type('partners', $args);
+}
+
+/*
 *  Rgister Post Type Slider
 */
 
@@ -523,7 +552,58 @@ function vc_certs_row_function($atts, $content)
 
 
     return $html;
-}/*
+}
+/*
+ *  Partners
+ */
+vc_map(array(
+    "name" => __("Партнеры", "js_composer"),
+    "base" => "partners_row",
+    "params" => array()
+));
+add_shortcode('partners_row', 'vc_partners_row_function');
+function vc_partners_row_function($atts, $content)
+{
+    extract(shortcode_atts(array(), $atts));
+
+    $arg = array(
+        'posts_per_page' => -1,
+        'post_type' => 'partners',
+        'status' => 'publish'
+    );
+
+    $the_query = new WP_Query($arg);
+
+
+    $html = ' <ul class="parnters-list">';
+
+
+    while ($the_query->have_posts()) :
+        $the_query->the_post();
+        $post_id = $the_query->post->ID;
+
+
+        $html .= '<div class="item-parnters-slider">
+                        <div class="item-parnters-slider-walp"> 
+                               
+                                <img  src=" ' . wp_get_attachment_url(get_post_thumbnail_id($post_id), 'partner_image') . '" alt="Логотип Партнера"  />
+                         
+					    </div>
+                    </div>';
+
+
+    endwhile;
+
+    $html .= ' </ul>';
+
+
+    return $html;
+}
+
+
+
+
+/*
  *  Map
  */
 vc_map(array(

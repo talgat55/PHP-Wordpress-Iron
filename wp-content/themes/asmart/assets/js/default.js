@@ -35,6 +35,7 @@ jQuery(document).ready(function() {
     Ajaxprice();
     Modal();
     MobileLInks();
+    PartnersCarousel();
 // end redy funvtion
 });
 
@@ -256,6 +257,40 @@ function CertCarousel() {
 
     });
 }
+
+/*
+*  Partners carousel
+*/
+function PartnersCarousel() {
+
+
+    jQuery('.parnters-list').slick({
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        dots: false,
+        autoplay: true,
+        arrows: false,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+            // You can unslick at a given breakpoint now by adding:
+            // settings: "unslick"
+            // instead of a settings object
+        ]
+
+    });
+}
+
+
+
+
+
 /*
 *  Maps
 */
