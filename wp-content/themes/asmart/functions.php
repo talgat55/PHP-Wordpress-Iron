@@ -310,19 +310,9 @@ if (function_exists('acf_add_options_page')) {
 
 function be_ajax_load_price()
 {
-    $arg = array(
-        'posts_per_page' => 1,
-        'post_type' => 'price_cat',
-        'meta_key' => 'type_product',
-        'meta_value' => $_POST['term'],
-        'meta_compare' => '==',
-        'status' => 'publish'
-    );
+
     ob_start();
-    $loop = new WP_Query($arg);
-    if ($loop->have_posts()): while ($loop->have_posts()): $loop->the_post();
-        be_post_summary();
-    endwhile; endif;
+    parseJson($_POST['term']);
     wp_reset_postdata();
     $data = ob_get_clean();
     wp_send_json_success($data);
@@ -333,20 +323,6 @@ add_action('wp_ajax_be_ajax_load_price', 'be_ajax_load_price');
 add_action('wp_ajax_nopriv_be_ajax_load_price', 'be_ajax_load_price');
 
 
-function be_post_summary()
-{
-    $prices = get_field('prices',  get_the_ID());
-
-    foreach ($prices as $price){  ?>
-        <tr>
-            <th><?=$price['block_price']['name_price']; ?></th>
-            <th><?=$price['block_price']['value_price']; ?></th>
-            <th><?=$price['block_price']['gost_price']; ?></th>
-            <th><?=$price['block_price']['note_price']; ?></th>
-        </tr>
-    <?php  }
-
-}
 
 
 
@@ -673,4 +649,148 @@ function vc_mapyandex_function($atts, $content)
 
 
     return $html;
+}
+
+
+/**
+ *   Create page for  upload file
+ */
+add_action('admin_menu', function(){
+    add_menu_page( 'Загрузить цены', 'Загрузить цены', 'manage_options', 'site-options', 'add_my_setting', '', 10 );
+} );
+
+// подробнее смотрите API Настроек: http://wp-kama.ru/id_3773/api-optsiy-nastroek.html
+function add_my_setting(){
+    ?>
+    <div class="wrap">
+        <h2>Загрузить файл цен</h2>
+
+        <?php
+        // settings_errors() не срабатывает автоматом на страницах отличных от опций
+        if( get_current_screen()->parent_base !== 'options-general' )
+            settings_errors('название_опции');
+        ?>
+
+        <form  enctype="multipart/form-data"    method="POST">
+
+            <input type="file" name="file_json"  />
+            <input type="submit" value="Загрузить файл">
+        </form>
+    </div>
+    <?php
+
+}
+
+// if isset
+if(isset($_FILES['file_json'])){
+
+            $tmp_name = $_FILES["file_json"]["tmp_name"];
+            $fp = fopen(ABSPATH."/xml/price.xlsx", 'w');
+            $data = file_get_contents($tmp_name);
+            fwrite($fp, $data);
+            fclose($fp);
+
+    function author_admin_notice(){
+
+        echo '<div class="notice notice-info is-dismissible">
+          <p>Файл успешно загружен</p>
+         </div>';
+    }
+    add_action('admin_notices', 'author_admin_notice');
+
+
+    require_once dirname(__FILE__) . '/PHPExcel-1.8/Classes/PHPExcel.php';
+    $File = $_SERVER['DOCUMENT_ROOT'] .'/xml/price.xlsx';
+
+    $excel = PHPExcel_IOFactory::load($File);
+    $Start = 8;
+    $Res = array();
+
+    $table_name = $wpdb->prefix . "prices";
+    global $wpdb;
+    $delete = $wpdb->query("TRUNCATE TABLE `".$table_name."`");
+    for ($i = $Start; $i <= 1000; $i++) {
+
+        if ($excel->getActiveSheet()->getCell('B' . $i)->getValue() == null) continue;
+        $Row = new stdClass();
+        if($Start == $i){
+            $GLOBALS['type']  = '3';
+        }
+        $Row->id = $i;
+
+
+        //var_dump($excel->getActiveSheet()->getCell('B' . $i)->getValue());
+
+        if($excel->getActiveSheet()->getCell('B' . $i)->getValue() != null  && $excel->getActiveSheet()->getCell('C' . $i)->getValue() == null){
+
+             if(trim($excel->getActiveSheet()->getCell('B' . $i)->getValue()) == 'Трубы круглые (чёрные)' ){
+                 $GLOBALS['type'] = '4';
+            }else if(trim($excel->getActiveSheet()->getCell('B' . $i)->getValue()) == 'ЛИСТОВОЙ ПРОКАТ' ){
+                 $GLOBALS['type'] = '5';
+            }else if(trim($excel->getActiveSheet()->getCell('B' . $i)->getValue()) == 'УГОЛОК' ){
+                 $GLOBALS['type'] = '6';
+            }else if(trim($excel->getActiveSheet()->getCell('B' . $i)->getValue()) == 'ШВЕЛЛЕР' ){
+                 $GLOBALS['type'] = '7';
+            }else if(trim($excel->getActiveSheet()->getCell('B' . $i)->getValue()) == 'КВАДРАТ' ){
+                 $GLOBALS['type'] = '8';
+            }else if(trim($excel->getActiveSheet()->getCell('B' . $i)->getValue()) == 'ПОЛОСА' ){
+                 $GLOBALS['type'] = '9';
+            }else if(trim($excel->getActiveSheet()->getCell('B' . $i)->getValue()) == 'АРМАТУРА (ПЕРИОД)' ){
+                 $GLOBALS['type'] = '10';
+            }else if(trim($excel->getActiveSheet()->getCell('B' . $i)->getValue()) == 'Круг' ){
+                 $GLOBALS['type'] = '11';
+            }
+
+
+
+
+        }
+        $Row->type = $GLOBALS['type'];
+        $Row->name = $excel->getActiveSheet()->getCell('B' . $i)->getValue();
+        $Row->price = $excel->getActiveSheet()->getCell('C' . $i)->getValue();
+        $Row->gost = $excel->getActiveSheet()->getCell('D' . $i)->getValue();
+        $Row->primechanie = $excel->getActiveSheet()->getCell('E' . $i)->getValue();
+        $Row->addfield_1 = $excel->getActiveSheet()->getCell('F' . $i)->getValue();
+        $Row->addfield_2 = $excel->getActiveSheet()->getCell('G' . $i)->getValue();
+        $Row->addfield_3 = $excel->getActiveSheet()->getCell('H' . $i)->getValue();
+
+
+
+        $Res[] = $Row;
+    }
+
+
+    $fp = fopen(ABSPATH."/xml/json/price.json", 'w');
+    fwrite($fp, json_encode($Res));
+    fclose($fp);
+
+}
+
+
+/**
+ * Return properly html  by id
+ * @param $filter_id
+ */
+function  parseJson($filter_id){
+    $json_file = file_get_contents(ABSPATH."/xml/json/price.json");
+    $objects = json_decode($json_file, true);
+
+    foreach ($objects as $object) {
+        if($object['type'] == $filter_id && !empty($object['price']) ) {
+            ?>
+
+
+            <tr>
+                <th><?= $object['name']; ?></th>
+                <th><?= $object['price']; ?></th>
+                <th><?= $object['gost']; ?></th>
+                <th><?= $object['primechanie'];
+                    $object['addfield_1'];
+                    $object['addfield_2'];
+                    $object['addfield_3']; ?></th>
+            </tr>
+
+            <?php
+        }
+    }
 }

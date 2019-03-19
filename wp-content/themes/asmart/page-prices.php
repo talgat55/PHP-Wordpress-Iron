@@ -54,6 +54,7 @@ get_header(); ?>
                             }
 
                             ?>
+
                             <li class="price-item col-lg-4 col-md-4 col-sm-6 col-xs-12">
                                 <a href="#" class="price-item-walp  <?= $class;     ?> "  data-type="<?= $type; ?>">
                                   <div class="image-price">
@@ -62,6 +63,7 @@ get_header(); ?>
                                   </div> <h3><?= get_the_title($post_id); ?></h3>
                                 </a>
                             </li>
+
                         <?php $i++; endwhile;  ?>
 
 
@@ -78,38 +80,21 @@ get_header(); ?>
                             </thead>
                             <tbody>
                         <?php
-                        $arg = array(
-                            'posts_per_page' => 1,
-                            'post_type' => 'price_cat',
-                            'status' => 'publish'
-                        );
+
+//
+
+
+
                         if(isset($_REQUEST['id'])){
 
-                            $arg[ 'meta_key'] =  'type_product';
-                            $arg[ 'meta_value'] = $_REQUEST['id'];
-                            $arg[ 'meta_compare'] = '==';
+                            $filter_id = $_REQUEST['id'];
+
+                        }else{
+                            $filter_id = '11';
                         }
 
-                        $the_query = new WP_Query($arg);
-
-                        while ($the_query->have_posts()) :
-                            $the_query->the_post();
-                            $post_id = $the_query->post->ID;
-
-                            $type = get_field('type_product', $post_id);
-                            $prices = get_field('prices', $post_id);
-
-
-                                foreach ($prices as $price){  ?>
-                                    <tr>
-                                        <th><?=$price['block_price']['name_price']; ?></th>
-                                        <th><?=$price['block_price']['value_price']; ?></th>
-                                        <th><?=$price['block_price']['gost_price']; ?></th>
-                                        <th><?=$price['block_price']['note_price']; ?></th>
-                                    </tr>
-                                <?php  } ?>
-
-                        <?php  endwhile;  ?>
+                        parseJson($filter_id);
+                        ?>
                             </tbody>
                         </table>
                     </div>

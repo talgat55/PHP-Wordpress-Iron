@@ -10,8 +10,12 @@
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
     <link rel="profile" href="http://gmpg.org/xfn/11">
-    <link rel="shortcut icon" href="<?php echo get_theme_file_uri('/assets/images/favicon.png') ?>"
-          type="image/x-icon"/>
+    <link rel="shortcut icon" href="<?php echo get_theme_file_uri('/assets/images/favicon.png') ?>"  type="image/x-icon"/>
+
+    <meta name="keywords" content="Металл, Металл в Омске,  резка металла, резка металла в Омске,  продажа металла,  резка металла в Омске, доставка металла, доставка металла в Омске">
+    <meta name="yandex-verification" content="04266aae0c236502" />
+
+
 
     <?php wp_head(); ?>
     <script type='text/javascript'>
