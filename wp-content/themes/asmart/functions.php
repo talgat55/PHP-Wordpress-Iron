@@ -784,10 +784,10 @@ function  parseJson($filter_id){
                 <th><?= $object['name']; ?></th>
                 <th><?= $object['price']; ?></th>
                 <th><?= $object['gost']; ?></th>
-                <th><?= $object['primechanie'];
-                    $object['addfield_1'];
-                    $object['addfield_2'];
-                    $object['addfield_3']; ?></th>
+                <th><?= $object['primechanie']; ?>
+                    <?= $object['addfield_1'];?>
+                    <?= $object['addfield_2'];?>
+                    <?= $object['addfield_3']; ?></th>
             </tr>
 
             <?php

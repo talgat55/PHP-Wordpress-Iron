@@ -320,7 +320,7 @@ function InitMaps() {
                     iconLayout: 'default#image',
                     // Своё изображение иконки метки.
                     //
-                    iconImageHref: 'http://iron.lightxdesign.ru/wp-content/themes/asmart/assets/images/marker.png',
+                    iconImageHref: 'http://metallplus55.ru/wp-content/themes/asmart/assets/images/marker.png',
                     // // Размеры метки.
                     iconImageSize: [45, 63],
                     // // Смещение левого верхнего угла иконки относительно
@@ -343,3 +343,16 @@ function InitMaps() {
         });
     }
 }
+//
+//  Metrics goals
+//
+document.addEventListener('wpcf7mailsent', function(event) {
+    if (event.detail.contactFormId == "158") {
+        yaCounter52499815.reachGoal('callback');
+        ga('send', 'event', 'form', 'callback');
+    } else if (event.detail.contactFormId == "68") {
+        yaCounter52499815.reachGoal('order');
+        ga('send', 'event', 'form', 'order');
+    }
+
+}, false);
